@@ -1,0 +1,40 @@
+.route_invest {
+  background-color: aquamarine;
+}
+
+////////////////////////////////////////////////////////////////
+
+.info__investiments {
+  background-color: blanchedalmond;
+}
+
+////////////////////////////////////////////////////////////////
+
+.get__help {
+  background-color: rgb(67, 23, 23);
+}
+
+////////////////////////////////////////////////////////////////
+.contact-details {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-details__title-text {
+  padding-bottom: 1rem;
+}
+
+.contact-details__name-phone {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.contact-details__full-name {
+  position: absolute;
+  left: 28.5%;
+  top: -50%;
+}

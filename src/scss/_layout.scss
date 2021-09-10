@@ -1,5 +1,35 @@
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
   background-color: $background-body;
+}
+
+//Container for background colors
+.container {
+  display: flex;
+  min-height: 50vh;
+  width: 100vh;
+
+  &__right {
+    background-color: $background-white;
+    width: 75%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__left {
+    width: 25%;
+    background-color: $background-blue;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 // .font-1 {
