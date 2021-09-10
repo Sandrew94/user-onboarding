@@ -14,7 +14,13 @@ export default function ButtonForPages(props) {
         </button>
       </Link>
       <Link to={`/pages${numberPage}`}>
-        <button>{text}</button>
+        <button
+          onClick={() => {
+            return text === "Finish" ? alert("Finish") : "";
+          }}
+        >
+          {text}
+        </button>
       </Link>
     </div>
   );
