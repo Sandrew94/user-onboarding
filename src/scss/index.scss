@@ -1,4 +1,6 @@
-body {
-  // test
-  background-color: rgb(159, 138, 138);
-}
+@import "_variables.scss";
+
+@import "_base.scss";
+@import "_layout.scss";
+
+@import "_components";
