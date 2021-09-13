@@ -6,6 +6,22 @@ export default function ContactDetail() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
+  //
+  const [isActive, setActive] = useState("");
+  const [isActiveEmail, setActiveEmail] = useState("");
+  const [isActiveCountry, setActiveCountry] = useState("");
+
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
+
+  const handleToggleEmail = () => {
+    setActiveEmail(!isActiveEmail);
+  };
+
+  const handleToggleCountry = () => {
+    setActiveCountry(!isActiveCountry);
+  };
 
   const onChangeHandler = (fieldName, value) => {
     if (fieldName === "full-name") setName(value);
@@ -57,13 +73,20 @@ export default function ContactDetail() {
           htmlFor="full-name"
           className="contact-details__name-phone-label"
         >
-          <span className="contact-details__full-name">Full name</span>
+          <span
+            className={`contact-details__full-name ${
+              isActive ? "colorBlue" : ""
+            }`}
+          >
+            Full name
+          </span>
           <input
             type="text"
             name="full-name"
             id="full-name"
             className="contact-details__name-phone-input"
             value={name}
+            onClick={handleToggle}
             onChange={(e) => {
               onChangeHandler("full-name", e.target.value);
             }}
@@ -80,6 +103,7 @@ export default function ContactDetail() {
             name="phoneNumber"
             className="contact-details__name-phone-input"
             value={phone}
+            onClick={handleToggle}
             onChange={(e) => {
               onChangeHandler("phone-number", e.target.value);
             }}
@@ -89,13 +113,20 @@ export default function ContactDetail() {
       </div>
 
       <div className="contact-details__email padding-top-mid">
-        <span className="contact-details__email-text">E-mail address</span>
+        <span
+          className={`contact-details__email-text ${
+            isActiveEmail ? "colorBlue" : ""
+          }`}
+        >
+          E-mail address
+        </span>
         <label htmlFor="email">
           <input
             type="text"
             name="email"
             className="contact-details__input-email-country"
             value={email}
+            onClick={handleToggleEmail}
             onChange={(e) => {
               onChangeHandler("email", e.target.value);
             }}
@@ -105,17 +136,30 @@ export default function ContactDetail() {
       </div>
 
       <div className="contact-details__email padding-top-mid">
-        <span className="contact-details__email-text">Country</span>
+        <span
+          className={`contact-details__email-text ${
+            isActiveCountry ? "colorBlue" : ""
+          }`}
+        >
+          Country
+        </span>
         <label htmlFor="country">
-          <input
+          <select
             type="text"
             name="country"
             className="contact-details__input-email-country"
             value={country}
+            onClick={handleToggleCountry}
             onChange={(e) => {
               onChangeHandler("country", e.target.value);
             }}
-          />
+          >
+            <option value=""></option>
+            <option value="italy">Italia</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
 
           <Validate validateInput={inputValidCountry} />
         </label>
@@ -130,7 +174,7 @@ export default function ContactDetail() {
           shared, so we take your privacy seriously
         </div>
         <span className="contact-details__expand-privacy">
-          Expand privacy policy
+          Expand privacy policy &#8594;
         </span>
       </div>
     </div>

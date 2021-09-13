@@ -129,3 +129,23 @@
 .padding-top-low {
   padding-top: 1rem;
 }
+
+.clickedBlue {
+  border-bottom: 2px solid $color-blue;
+}
+
+.colorBlue {
+  color: $color-blue;
+}
+
+.contact-details__name-phone-input:focus {
+  border-bottom: 2px solid $color-blue;
+}
+
+.contact-details__full-name:focus {
+  color: $color-blue;
+}
+
+.contact-details__input-email-country:focus {
+  border-bottom: 2px solid $color-blue;
+}
