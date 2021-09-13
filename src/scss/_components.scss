@@ -15,26 +15,117 @@
 }
 
 ////////////////////////////////////////////////////////////////
+//contact-details SECTIONS
+
 .contact-details {
+  width: 100%;
   height: 70%;
   display: flex;
   flex-direction: column;
-}
-
-.contact-details__title-text {
-  padding-bottom: 1rem;
-}
-
-.contact-details__name-phone {
-  margin: 2rem;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
+  align-items: center;
+
+  &__container {
+    width: 80%;
+  }
+
+  &__container:last-child {
+    margin-top: 3rem;
+  }
+
+  &__container-title {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 800;
+    font-size: 2.8rem;
+    line-height: 36px;
+    letter-spacing: 2%;
+  }
+
+  &__container-title-text {
+    padding-bottom: 1rem;
+    font-weight: 500;
+    color: $color-dark-grey;
+    word-wrap: break-word;
+    font-size: 1.6rem;
+    line-height: 141%;
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  &__name-phone {
+    width: 80%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__name-phone-label {
+    position: relative;
+    width: 48%;
+  }
+
+  &__full-name {
+    position: absolute;
+    left: 0;
+    top: -90%;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    color: $color-dark-grey;
+  }
+
+  &__name-phone-input {
+    width: 100%;
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid $color-light-grey;
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  &__email-text {
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    color: $color-dark-grey;
+  }
+
+  &__input-email-country {
+    width: 100%;
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid $color-light-grey;
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  &__expand-privacy {
+    color: $color-blue;
+  }
 }
 
-.contact-details__full-name {
-  position: absolute;
-  left: 28.5%;
-  top: -50%;
+.bold {
+  font-weight: bold;
+}
+
+.font-size-title {
+  font-size: 2.1rem;
+  line-height: 28px;
+  letter-spacing: 0;
+}
+
+.padding-top-mid {
+  padding-top: 2rem;
+}
+
+.padding-top-low {
+  padding-top: 1rem;
 }
