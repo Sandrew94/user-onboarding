@@ -11,7 +11,7 @@ body {
 .container {
   display: flex;
   min-height: 80vh;
-  width: 120vh;
+  width: 110vh;
 
   &__right {
     background-color: $background-white;
@@ -23,7 +23,7 @@ body {
     justify-content: space-between;
   }
   &__left {
-    width: 40%;
+    width: 35%;
     background-color: $background-blue;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
