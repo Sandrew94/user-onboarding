@@ -114,7 +114,7 @@ export default function ContactDetail() {
 
       <div className="contact-details__email padding-top-mid">
         <span
-          className={`contact-details__email-text ${
+          className={`contact-details__email-text margin-0 ${
             isActiveEmail ? "colorBlue" : ""
           }`}
         >

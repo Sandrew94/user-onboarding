@@ -13,7 +13,7 @@
   }
 
   &__container:last-child {
-    margin-top: 3rem;
+    margin-top: 6rem;
   }
 
   &__container-title {
@@ -22,6 +22,7 @@
     font-size: 2.8rem;
     line-height: 36px;
     letter-spacing: 0.2px;
+    margin-bottom: 2rem;
   }
 
   &__container-title-text {
@@ -30,7 +31,8 @@
     color: $color-dark-grey;
     word-wrap: break-word;
     font-size: 1.6rem;
-    line-height: 141%;
+    line-height: 2.4rem;
+    letter-spacing: 0.2px;
   }
 
   ////////////////////////////////////////////////////////////////
@@ -52,14 +54,19 @@
   &__full-name {
     position: absolute;
     left: 0;
-    top: -90%;
+    top: -70%;
     line-height: 20px;
     font-weight: 500;
     letter-spacing: 0.2px;
     color: $color-dark-grey;
+    font-size: 1.4rem;
   }
 
   &__name-phone-input {
+    font-weight: 500;
+    font-size: 2.1rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.2px;
     width: 100%;
     border: 0;
     outline: none;
@@ -75,14 +82,19 @@
   }
 
   &__email-text {
-    line-height: 20px;
+    line-height: 2rem;
     font-weight: 500;
     letter-spacing: 0.2px;
+    font-size: 1.4rem;
     color: $color-dark-grey;
+    margin-bottom: 1rem;
   }
 
   &__input-email-country {
     width: 100%;
+    font-weight: 500;
+    font-size: 2.1rem;
+    line-height: 2.8rem;
     border: 0;
     outline: none;
     border-bottom: 2px solid $color-light-grey;
@@ -91,6 +103,10 @@
   ////////////////////////////////////////////////////////////////
 
   &__expand-privacy {
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.2px;
     color: $color-blue;
   }
 }
@@ -108,7 +124,7 @@
 }
 
 .padding-top-mid {
-  padding-top: 2rem;
+  padding-top: 4rem;
 }
 
 .padding-top-low {
@@ -133,4 +149,12 @@
 
 .contact-details__input-email-country:focus {
   border-bottom: 2px solid $color-blue;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.errors {
+  font-size: 1.6rem;
 }

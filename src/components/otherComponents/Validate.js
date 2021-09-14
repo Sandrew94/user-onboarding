@@ -6,7 +6,10 @@ export default function Validate({ validateInput }) {
   //////////// max length
   if (validateInput.value.length >= validateInput.maxLength) {
     return (
-      <div> - Max length allowed is {validateInput.maxLength} character</div>
+      <div className="errors">
+        {" "}
+        - Max length allowed is {validateInput.maxLength} character
+      </div>
     );
   }
 
@@ -17,7 +20,7 @@ export default function Validate({ validateInput }) {
     !isNaN(parseFloat(validateInput.value)) &&
     isFinite(+validateInput.value)
   ) {
-    return <div> - Numbers doen't allowed </div>;
+    return <div className="errors"> - Numbers doen't allowed </div>;
   }
 
   /////// strings doens't allowed
@@ -27,7 +30,7 @@ export default function Validate({ validateInput }) {
     emptySpace &&
     isNaN(parseFloat(validateInput.value))
   ) {
-    return <div> - Strings doen't allowed </div>;
+    return <div className="errors"> - Strings doen't allowed </div>;
   }
 
   ///// allow email addresses
@@ -39,7 +42,7 @@ export default function Validate({ validateInput }) {
     validateInput.allowEmail &&
     emptySpace
   ) {
-    return <div> - Not a valid email</div>;
+    return <div className="errors"> - Not a valid email</div>;
   }
 
   return <> </>;
