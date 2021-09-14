@@ -1,3 +1,75 @@
 .route_invest {
-  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &_single-container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    position: relative;
+    margin-top: 4rem;
+  }
+
+  &_quadrato {
+    width: 3rem;
+    height: 3rem;
+    background-color: $background-deactivated;
+    border-radius: 4px;
+    z-index: 8;
+    position: relative;
+  }
+
+  &_quadrato1 {
+    z-index: 5;
+    top: 11%;
+    left: 11%;
+    position: absolute;
+    border-radius: 4px;
+    padding: 0.6rem;
+    background-color: $background-deactivated;
+    border: 6px solid #35a0ee;
+  }
+
+  &_rettangolo-1 {
+    position: absolute;
+    top: 240%;
+    width: 0.4rem;
+    height: 0.9rem;
+    background-color: $background-deactivated;
+    border-radius: 1px;
+    clip-path: inset(0 24% 0 13% round 5%);
+  }
+
+  &_rettangolo-2 {
+    position: absolute;
+    top: 360%;
+    clip-path: inset(0 24% 0 13% round 5%);
+    width: 0.4rem;
+    height: 0.9rem;
+    background-color: $background-deactivated;
+    border-radius: 1px;
+    clip-path: inset(0 24% 0 13% round 5%);
+  }
+
+  &_text {
+    font-family: "Montserrat Alternates", sans-serif;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.2px;
+    font-weight: 700;
+    color: $background-deactivated;
+  }
+}
+
+.deactivated {
+  background-color: #35a0ee;
+}
+
+.active-background {
+  background-color: #fff;
+}
+
+.active-text {
+  color: #fff;
 }
