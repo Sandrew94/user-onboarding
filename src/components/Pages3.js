@@ -3,6 +3,7 @@ import ButtonForPages from "./otherComponents/ButtonForPages";
 import Logo from "./otherComponents/Logo";
 import RouteInvestiments from "./otherComponents/RouteInvestiments";
 import InfoInvestiments from "./otherComponents/InfoInvestiments";
+import GetHelp from "./otherComponents/GetHelp";
 
 export default function Pages3() {
   return (
@@ -13,7 +14,7 @@ export default function Pages3() {
         <InfoInvestiments />
       </div>
       <div className="container__right">
-        Container right PAGE 3
+        <GetHelp />
         <ButtonForPages
           numberPage={3}
           backPage={"/pages2"}
