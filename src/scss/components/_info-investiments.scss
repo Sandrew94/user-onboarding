@@ -1,0 +1,84 @@
+.info-investiments {
+  background-color: $background-white;
+  box-shadow: 0px 8px 20px rgba(3, 17, 6, 0.03);
+  border-radius: 4px;
+  width: 80%;
+  height: 35%;
+  margin-bottom: 4rem;
+  margin-left: 4rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  &__text {
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.2px;
+    color: $color-dark-grey;
+  }
+
+  &__inv-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+  }
+
+  &__inv-name-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__inv-name {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: 0.2px;
+    line-height: 2.4rem;
+    color: $color-black-1;
+  }
+
+  &__inv-name-role {
+    font-size: 1.4rem;
+    letter-spacing: 0.2px;
+    line-height: 2rem;
+    font-weight: 500;
+    color: $color-dark-grey;
+  }
+
+  &__inv-name-logo {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.backtips-top {
+  z-index: 1;
+  background-image: url(../../images/‘‘.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 5.6rem;
+  height: 5.6rem;
+  top: -15%;
+  left: -5%;
+  box-shadow: 16px 12px 56px rgba(11, 29, 46, 0.15);
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.vector-left {
+  width: 30%;
+  height: 20%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: #35a0ee;
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+  opacity: 0.07;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

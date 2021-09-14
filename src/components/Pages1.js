@@ -12,7 +12,13 @@ export default function Pages1() {
       <div className="container__left">
         <Logo />
         <RouteInvestiments />
-        <InfoInvestiments />
+        <InfoInvestiments
+          text={
+            "We care about your time, that's why we created a 3-stage onboarding that will not take more than 5 minutes to complete"
+          }
+          nameInvest={"William Mac"}
+          roleInvest={"CO-FOUNDER, INVESTOR"}
+        />
       </div>
       <div className="container__right">
         <GetHelp />

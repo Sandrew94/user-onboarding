@@ -3,4 +3,9 @@
 @import "_base.scss";
 @import "_layout.scss";
 
-@import "_components";
+@import "_utils";
+//All components
+@import "./components/info-investiments";
+@import "./components/contacts-details";
+@import "./components/route-invest";
+@import "./components/get-help";
