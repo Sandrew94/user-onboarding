@@ -11,7 +11,13 @@ export default function Pages3() {
       <div className="container__left">
         <Logo />
         <RouteInvestiments />
-        <InfoInvestiments />
+        <InfoInvestiments
+          text={
+            "United Properties is about fast & easy searching, buying, selling and investing ever — online, with an expert by our side"
+          }
+          nameInvest={"Ollie Mcmahon"}
+          roleInvest={"MANAGING DIRECTOR"}
+        />
       </div>
       <div className="container__right">
         <GetHelp />

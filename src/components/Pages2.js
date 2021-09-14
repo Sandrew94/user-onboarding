@@ -11,7 +11,13 @@ export default function Pages2() {
       <div className="container__left">
         <Logo />
         <RouteInvestiments />
-        <InfoInvestiments />
+        <InfoInvestiments
+          text={
+            "Save from thousands to millions on your deal. Secure the best possible. And get independent, unbiased advice for free"
+          }
+          nameInvest={"Jodie Sears"}
+          roleInvest={"UNITEDPROPERTIES’ AGENT"}
+        />
       </div>
       <div className="container__right">
         <GetHelp />
