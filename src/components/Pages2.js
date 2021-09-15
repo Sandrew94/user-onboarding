@@ -4,6 +4,7 @@ import Logo from "./otherComponents/Logo";
 import RouteInvestiments from "./otherComponents/RouteInvestiments";
 import InfoInvestiments from "./otherComponents/InfoInvestiments";
 import GetHelp from "./otherComponents/GetHelp";
+import InvestmentPlans from "./otherComponents/InvestmentPlans";
 
 export default function Pages2() {
   return (
@@ -21,6 +22,7 @@ export default function Pages2() {
       </div>
       <div className="container__right">
         <GetHelp />
+        <InvestmentPlans />
         <ButtonForPages
           numberPage={3}
           text={"Next step ➝"}

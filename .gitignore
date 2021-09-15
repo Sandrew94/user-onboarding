@@ -24,3 +24,7 @@ yarn-error.log*
 
 #Flowchart folder
 flowchart-userOnBoarding.shapex
+
+#unused filles
+ProgressBar.js
+ProgressBarSteps.js

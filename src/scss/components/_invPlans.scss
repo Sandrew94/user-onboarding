@@ -1,0 +1,125 @@
+.inv__plans {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    width: 56.2rem;
+    margin-bottom: 3rem;
+    &-big {
+      font-family: "Montserrat Alternates", sans-serif;
+      font-weight: 800;
+      font-style: normal;
+      font-size: 2.8rem;
+      line-height: 3.6rem;
+      letter-spacing: 0.2px;
+    }
+    &-small {
+      font-weight: 500;
+      font-style: normal;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      letter-spacing: 0.2px;
+      color: $color-dark-grey;
+    }
+  }
+
+  ////////////////////////////////
+
+  &-planning-year-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  &-title-medium {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 2.1rem;
+    line-height: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  &-money-input {
+    width: 100%;
+    display: flex;
+  }
+
+  &-money-input-container {
+    margin-right: 1rem;
+  }
+
+  &-money-input-from {
+    width: 100%;
+    font-size: 2.1rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+  }
+
+  &-money-input-input-to {
+    width: 100%;
+    font-size: 2.1rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+  }
+
+  &-money-input-span {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: 0.2px;
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  &-money-bar {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  &-money-investor-container {
+  }
+
+  &-money-investor-title {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    line-height: 2.8rem;
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  &-container-btn {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    &-label {
+      padding: 3rem;
+    }
+
+    &-label-checkmark {
+      padding: 0.5rem;
+    }
+  }
+}
+
+.ant-steps-item {
+  margin-left: -1.5rem;
+}
+
+.ant-steps-item-tail {
+  padding-left: 3rem;
+}
+
+.filter {
+  filter: invert(49%) sepia(41%) saturate(790%) hue-rotate(163deg)
+    brightness(105%) contrast(98%);
+}
