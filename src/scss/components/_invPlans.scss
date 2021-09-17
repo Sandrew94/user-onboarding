@@ -2,14 +2,16 @@
   &-container {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
+    align-items: center;
   }
 
   &-title {
     display: flex;
     flex-direction: column;
     width: 56.2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    margin-right: 4rem;
     &-big {
       font-family: "Montserrat Alternates", sans-serif;
       font-weight: 800;
@@ -25,6 +27,7 @@
       line-height: 2.4rem;
       letter-spacing: 0.2px;
       color: $color-dark-grey;
+      padding-top: 1.5rem;
     }
   }
 
@@ -33,7 +36,9 @@
   &-planning-year-container {
     display: flex;
     flex-direction: column;
+    justify-self: flex-start;
     margin-bottom: 4rem;
+    margin-left: 1rem;
   }
 
   &-title-medium {
@@ -41,7 +46,7 @@
     font-size: 2.1rem;
     line-height: 2.8rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   &-money-input {
@@ -50,7 +55,7 @@
   }
 
   &-money-input-container {
-    margin-right: 1rem;
+    margin-right: 3rem;
   }
 
   &-money-input-from {
@@ -59,6 +64,9 @@
     line-height: 2.8rem;
     letter-spacing: 0.2px;
     font-weight: 600;
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid #d5d9dc;
   }
 
   &-money-input-input-to {
@@ -67,6 +75,9 @@
     line-height: 2.8rem;
     letter-spacing: 0.2px;
     font-weight: 600;
+    border: 0;
+    outline: none;
+    border-bottom: 2px solid #d5d9dc;
   }
 
   &-money-input-span {
@@ -74,18 +85,92 @@
     font-size: 1.4rem;
     line-height: 2rem;
     letter-spacing: 0.2px;
+    color: $color-dark-grey;
   }
 
   ////////////////////////////////////////////////////////////////
-
   &-money-bar {
     margin-top: 4rem;
     margin-bottom: 4rem;
+    position: relative;
+    &-line-1 {
+      @include lineInvest;
+    }
+
+    &-line-1::after {
+      @include lineInvest-after;
+    }
+    &-line-1::before {
+      @include lineInvest-before;
+    }
+    &-line-2 {
+      @include lineInvest;
+      //left: 9.7rem;
+      left: 11.7rem;
+    }
+
+    &-line-2::after {
+      @include lineInvest-after;
+    }
+    &-line-2::before {
+      @include lineInvest-before;
+    }
+    //////////////
+    &-line-3 {
+      @include lineInvest;
+      left: 23.5rem;
+    }
+
+    &-line-3::after {
+      @include lineInvest-after;
+    }
+    &-line-3::before {
+      @include lineInvest-before;
+    }
+    &-line-4 {
+      @include lineInvest;
+      left: 35.2rem;
+    }
+
+    &-line-4::after {
+      @include lineInvest-after;
+    }
+    &-line-4::before {
+      @include lineInvest-before;
+    }
+    &-line-5 {
+      @include lineInvest;
+      left: 47rem;
+    }
+
+    &-line-5::after {
+      @include lineInvest-after;
+    }
+    &-line-5::before {
+      @include lineInvest-before;
+    }
+
+    &-line-6 {
+      position: absolute;
+      left: 58rem;
+    }
+  }
+  &-money-bar::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: red;
   }
 
   ////////////////////////////////////////////////////////////////
 
   &-money-investor-container {
+    margin-top: 3rem;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    align-items: flex-start;
   }
 
   &-money-investor-title {
@@ -93,6 +178,7 @@
     font-weight: 700;
     font-size: 2.1rem;
     line-height: 2.8rem;
+    padding-bottom: 4rem;
   }
 
   ////////////////////////////////////////////////////////////////
@@ -101,12 +187,23 @@
     font-weight: 700;
     font-size: 1.6rem;
     line-height: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    width: 52%;
+
     &-label {
-      padding: 3rem;
+      padding: 1.5rem 3rem;
+      border: 2px solid #d5d9dc;
+      border-radius: 4px;
     }
 
     &-label-checkmark {
-      padding: 0.5rem;
+      padding: 2rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      letter-spacing: 0.2px;
+      color: $color-black-dark;
     }
   }
 }
@@ -122,4 +219,62 @@
 .filter {
   filter: invert(49%) sepia(41%) saturate(790%) hue-rotate(163deg)
     brightness(105%) contrast(98%);
+}
+
+.inv__plans-money-line-money {
+  position: absolute;
+  top: 3rem;
+  left: -2rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+  color: $color-grey;
+}
+
+.inv__plans-absolute-square {
+  background: #35a0ee;
+  border-radius: 1px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: -1rem;
+  left: -0.5rem;
+}
+
+// .inv__plans-absolute-square::after {
+//   content: "";
+//   border-radius: 1px;
+//   width: 16px;
+//   height: 16px;
+//   position: absolute;
+//   background: #35a0ee;
+//   left: 9rem;
+// }
+
+.active-1 {
+  background: #f7fbff;
+  border: 2px solid #35a0ee;
+}
+
+// .deactivated-11 {
+//   border: 2px solid #d5d9dc;
+// }
+
+.color-blue {
+  color: #35a0ee;
+}
+
+.inv__plans-absolute-line {
+  background: #35a0ee;
+  position: absolute;
+  top: 40%;
+  width: 100px;
+  height: 4px;
+}
+
+input[type="radio"] {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+  transform: scale(1.5);
 }

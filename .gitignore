@@ -25,6 +25,7 @@ yarn-error.log*
 #Flowchart folder
 flowchart-userOnBoarding.shapex
 
-#unused filles
+#unused files
 ProgressBar.js
 ProgressBarSteps.js
+remove 

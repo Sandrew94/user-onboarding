@@ -1,9 +1,17 @@
 import React, { useState } from "react";
-import AntSteps from "./AntSteps";
+import StepProgressBar from "./StepProgressBar";
+import { squareInput, fromInput } from "../utils/functionBar";
 
 export default function InvestmentPlans() {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const handleOnClick = (index) => {
+    setActiveIndex(index);
+  };
+
+  const box = ["Yes", "No"];
 
   const onHandleChangeBar = function (name, value) {
     if (name === "from") setFrom(value);
@@ -44,10 +52,10 @@ export default function InvestmentPlans() {
             />
           </label>
         </div>
-        <div className="inv__plans-money-bar">
-          {console.log(to / 10000)}
-          <AntSteps currentStep={from / 10000} lastStep={to / 100000} />
-        </div>
+        <StepProgressBar
+          from={fromInput(from, squareInput(to))}
+          to={squareInput(to)}
+        />
       </div>
 
       <div className="inv__plans-money-investor-container">
@@ -56,16 +64,29 @@ export default function InvestmentPlans() {
         </span>
 
         <div className="inv__plans-container-btn">
-          <label className="inv__plans-container-btn-label">
-            Yes
-            <input type="radio" name="radio" />
-            <span className="inv__plans-container-btn-label-checkmark"></span>
-          </label>
-          <label className="inv__plans-container-btn-label">
-            No
-            <input type="radio" name="radio" />
-            <span className="inv__plans-container-btn-label-checkmark"></span>
-          </label>
+          {box.map((el, index) => {
+            return (
+              <label
+                key={index}
+                className={`inv__plans-container-btn-label ${
+                  activeIndex === index ? "active-1" : ""
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="radio"
+                  onClick={() => handleOnClick(index)}
+                />
+                <span
+                  className={`inv__plans-container-btn-label-checkmark ${
+                    activeIndex === index ? "color-blue" : ""
+                  }`}
+                >
+                  {el}
+                </span>
+              </label>
+            );
+          })}
         </div>
       </div>
     </div>
