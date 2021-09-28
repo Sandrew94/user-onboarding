@@ -1,4 +1,4 @@
-.info-investiments {
+.info_investiments {
   background-color: #fff;
   box-shadow: 0px 8px 20px rgba(3, 17, 6, 0.03);
   border-radius: 4px;
@@ -14,7 +14,7 @@
 }
 
 @media only screen and (max-width: 1440px) {
-  .info-investiments {
+  .info_investiments {
     margin: 4rem auto;
     width: 85%;
   }
@@ -61,7 +61,7 @@
 
 .backtips-top {
   z-index: 1;
-  background-image: url(../../images/‘‘.svg);
+  background-image: url(../../../images/‘‘.svg);
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
