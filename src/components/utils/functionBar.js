@@ -12,25 +12,25 @@ export const squareInput = function (input) {
   if (input <= 90000 && input > 80000) return 21.5;
   if (input <= 100000 && input > 90000) return 23.5;
   ///////////////////////////////////////////////
-  if (input <= 120000 && input > 100000) return 22;
-  if (input <= 140000 && input > 120000) return 24;
-  if (input <= 160000 && input > 140000) return 26;
-  if (input <= 180000 && input > 160000) return 27.5;
-  if (input <= 200000 && input > 180000) return 29;
+  if (input <= 120000 && input > 100000) return 22 + 5.5;
+  if (input <= 140000 && input > 120000) return 24 + 5.5;
+  if (input <= 160000 && input > 140000) return 26 + 5.5;
+  if (input <= 180000 && input > 160000) return 27.5 + 5.5;
+  if (input <= 200000 && input > 180000) return 29 + 5.5;
   ///////////////////////////////////////////////
-  if (input <= 250000 && input > 200000) return 31;
-  if (input <= 300000 && input > 250000) return 32.5;
-  if (input <= 350000 && input > 300000) return 34.5;
-  if (input <= 400000 && input > 350000) return 36;
-  if (input <= 450000 && input > 400000) return 37.5;
-  if (input <= 500000 && input > 450000) return 39;
+  if (input <= 250000 && input > 200000) return 31 + 7.5;
+  if (input <= 300000 && input > 250000) return 32.5 + 7.5;
+  if (input <= 350000 && input > 300000) return 34.5 + 7.5;
+  if (input <= 400000 && input > 350000) return 36 + 7.5;
+  if (input <= 450000 && input > 400000) return 37.5 + 7.5;
+  if (input <= 500000 && input > 450000) return 39 + 7.5;
   ///////////////////////////////////////////////
-  if (input <= 600000 && input > 500000) return 41;
-  if (input <= 700000 && input > 600000) return 43;
-  if (input <= 800000 && input > 700000) return 45;
-  if (input <= 900000 && input > 800000) return 46.5;
-  if (input <= 1000000 && input > 900000) return 47.5;
-  if (input >= 1000001) return 49;
+  if (input <= 600000 && input > 500000) return 41 + 9.5;
+  if (input <= 700000 && input > 600000) return 43 + 9.5;
+  if (input <= 800000 && input > 700000) return 45 + 9.5;
+  if (input <= 900000 && input > 800000) return 46.5 + 9.5;
+  if (input <= 999999 && input > 900000) return 47.5 + 9.5;
+  if (input >= 1000000) return 49 + 9.5;
 };
 
 export const fromInput = function (from, squareInput) {

@@ -1,5 +1,6 @@
 import React from "react";
-import up from "../../images/UP.svg";
+import up from "../../../images/UP.svg";
+//import classes from "./InfoInvestiments.module.css";
 
 export default function InfoInvestiments(props) {
   const { text, nameInvest, roleInvest } = props;

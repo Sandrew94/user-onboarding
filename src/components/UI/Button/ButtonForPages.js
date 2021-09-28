@@ -1,19 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import classes from "./ButtonForPages.module.css";
 
 export default function ButtonForPages(props) {
   const { backPage, numberPage, text, backText } = props;
   return (
-    <div className="btn-container">
+    <div className={classes["btn-container"]}>
       <Link to={`${backPage}`}>
-        <button className="btn btn-no-background btn-color-blue">
+        <button
+          className={`${classes.btn} ${classes["btn-no-background"]} ${classes["btn-color-blue"]}`}
+        >
           &#8592; {backText}
         </button>
       </Link>
-      <div className="btn-container-last-2">
+      <div>
         <Link to={`/pages${numberPage}`}>
           <button
-            className="btn btn-color-blue btn-background-color-blue"
+            className={`${classes.btn} ${classes["btn-background-color-blue"]} ${classes["btn-color-blue"]}`}
             disabled={text === "Finish" ? true : false}
           >
             Skip for now
@@ -21,7 +24,7 @@ export default function ButtonForPages(props) {
         </Link>
         <Link to={`/pages${numberPage}`}>
           <button
-            className="btn btn-background-color-blue-light btn-margin-left"
+            className={`${classes.btn} ${classes["btn-background-color-blue-light"]} ${classes["btn-margin-left"]}`}
             onClick={() => {
               return text === "Finish" ? alert("Finish") : "";
             }}

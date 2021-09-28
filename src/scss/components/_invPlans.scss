@@ -69,7 +69,7 @@
     border-bottom: 2px solid #d5d9dc;
   }
 
-  &-money-input-input-to {
+  &-money-input-to {
     width: 100%;
     font-size: 2.1rem;
     line-height: 2.8rem;
@@ -97,58 +97,58 @@
       @include lineInvest;
     }
 
-    &-line-1::after {
-      @include lineInvest-after;
-    }
-    &-line-1::before {
-      @include lineInvest-before;
-    }
+    // &-line-1::after {
+    //   @include lineInvest-after;
+    // }
+    // &-line-1::before {
+    //   @include lineInvest-before;
+    // }
     &-line-2 {
       @include lineInvest;
       //left: 9.7rem;
       left: 11.7rem;
     }
 
-    &-line-2::after {
-      @include lineInvest-after;
-    }
-    &-line-2::before {
-      @include lineInvest-before;
-    }
+    // &-line-2::after {
+    //   @include lineInvest-after;
+    // }
+    // &-line-2::before {
+    //   @include lineInvest-before;
+    // }
     //////////////
     &-line-3 {
       @include lineInvest;
       left: 23.5rem;
     }
 
-    &-line-3::after {
-      @include lineInvest-after;
-    }
-    &-line-3::before {
-      @include lineInvest-before;
-    }
+    // &-line-3::after {
+    //   @include lineInvest-after;
+    // }
+    // &-line-3::before {
+    //   @include lineInvest-before;
+    // }
     &-line-4 {
       @include lineInvest;
       left: 35.2rem;
     }
 
-    &-line-4::after {
-      @include lineInvest-after;
-    }
-    &-line-4::before {
-      @include lineInvest-before;
-    }
+    // &-line-4::after {
+    //   @include lineInvest-after;
+    // }
+    // &-line-4::before {
+    //   @include lineInvest-before;
+    // }
     &-line-5 {
       @include lineInvest;
-      left: 47rem;
+      left: 46rem;
     }
 
-    &-line-5::after {
-      @include lineInvest-after;
-    }
-    &-line-5::before {
-      @include lineInvest-before;
-    }
+    // &-line-5::after {
+    //   @include lineInvest-after;
+    // }
+    // &-line-5::before {
+    //   @include lineInvest-before;
+    // }
 
     &-line-6 {
       position: absolute;
@@ -171,6 +171,9 @@
     flex-direction: column;
     justify-self: flex-start;
     align-items: flex-start;
+    @media only screen and (max-width: 1440px) {
+      width: 85%;
+    }
   }
 
   &-money-investor-title {
@@ -190,6 +193,10 @@
     display: flex;
     justify-content: space-between;
     width: 52%;
+    @media only screen and (max-width: 1440px) {
+      width: 70%;
+      margin: auto 2;
+    }
 
     &-label {
       padding: 1.5rem 3rem;
@@ -257,24 +264,48 @@
   border: 2px solid #35a0ee;
 }
 
-// .deactivated-11 {
-//   border: 2px solid #d5d9dc;
-// }
-
 .color-blue {
   color: #35a0ee;
 }
 
-.inv__plans-absolute-line {
-  background: #35a0ee;
-  position: absolute;
-  top: 40%;
-  width: 100px;
-  height: 4px;
-}
+// .inv__plans-absolute-line {
+//   background: #35a0ee;
+//   position: absolute;
+//   top: 40%;
+//   width: 100px;
+//   height: 4px;
+// }
 
 input[type="radio"] {
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
   transform: scale(1.5);
+}
+
+.active-input-border {
+  border-bottom: 2px solid $color-light-blue;
+}
+
+.active-input-color-name {
+  color: $color-light-blue;
+}
+
+#rectangleUp-1 {
+  background-color: red;
+}
+
+#rectangleUp-2 {
+  background-color: red;
+}
+
+#rectangleUp-3 {
+  background-color: red;
+}
+
+#rectangleUp-4 {
+  background-color: red;
+}
+
+#rectangleUp-5 {
+  background-color: red;
 }

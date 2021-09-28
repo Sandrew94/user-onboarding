@@ -5,17 +5,20 @@ import { squareInput, fromInput } from "../utils/functionBar";
 export default function InvestmentPlans() {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-  const [activeIndex, setActiveIndex] = React.useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeInput, setActiveInput] = useState(-1);
 
-  const handleOnClick = (index) => {
-    setActiveIndex(index);
-  };
-
+  const formToFrom = ["from", "to"];
   const box = ["Yes", "No"];
 
   const onHandleChangeBar = function (name, value) {
     if (name === "from") setFrom(value);
     if (name === "to") setTo(value);
+  };
+
+  const handleOnClick = (name, index) => {
+    if (name === "button") setActiveIndex(index);
+    if (name === "input") setActiveInput(index);
   };
 
   return (
@@ -32,25 +35,35 @@ export default function InvestmentPlans() {
           How much are you planning to invest in this year?
         </span>
         <div className="inv__plans-money-input">
-          <label className="inv__plans-money-input-container" name="From">
-            <span className="inv__plans-money-input-span">From</span>
-            <input
-              name="From"
-              type="text"
-              className="inv__plans-money-input-from"
-              onChange={(e) => onHandleChangeBar("from", e.target.value)}
-            />
-          </label>
-
-          <label className="inv__plans-money-input-container" name="To">
-            <span className="inv__plans-money-input-span">To</span>
-            <input
-              type="text"
-              name="To"
-              className="inv__plans-money-input-input-to"
-              onChange={(e) => onHandleChangeBar("to", e.target.value)}
-            />
-          </label>
+          {formToFrom.map((el, idx) => {
+            return (
+              <label
+                key={idx}
+                className="inv__plans-money-input-container"
+                name={el}
+              >
+                <span
+                  className={`inv__plans-money-input-span ${
+                    activeInput === idx ? "active-input-color-name" : ""
+                  }`}
+                >
+                  {el[0].toUpperCase() + el.slice(1, el.length)}
+                </span>
+                <input
+                  key={idx}
+                  name={el}
+                  type="text"
+                  className={`inv__plans-money-input-${el} ${
+                    activeInput === idx ? "active-input-border" : ""
+                  }`}
+                  onChange={(e) => onHandleChangeBar(`${el}`, e.target.value)}
+                  onClick={() => {
+                    handleOnClick("input", idx);
+                  }}
+                />
+              </label>
+            );
+          })}
         </div>
         <StepProgressBar
           from={fromInput(from, squareInput(to))}
@@ -64,22 +77,22 @@ export default function InvestmentPlans() {
         </span>
 
         <div className="inv__plans-container-btn">
-          {box.map((el, index) => {
+          {box.map((el, idx) => {
             return (
               <label
-                key={index}
+                key={idx}
                 className={`inv__plans-container-btn-label ${
-                  activeIndex === index ? "active-1" : ""
+                  activeIndex === idx ? "active-1" : ""
                 }`}
               >
                 <input
                   type="radio"
                   name="radio"
-                  onClick={() => handleOnClick(index)}
+                  onClick={() => handleOnClick("button", idx)}
                 />
                 <span
                   className={`inv__plans-container-btn-label-checkmark ${
-                    activeIndex === index ? "color-blue" : ""
+                    activeIndex === idx ? "color-blue" : ""
                   }`}
                 >
                   {el}

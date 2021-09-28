@@ -1,10 +1,10 @@
 import React from "react";
-import Logo from "./otherComponents/Logo";
-import RouteInvestiments from "./otherComponents/RouteInvestiments";
-import InfoInvestiments from "./otherComponents/InfoInvestiments";
-import GetHelp from "./otherComponents/GetHelp";
-import ContactDetail from "./otherComponents/ContactDetail";
-import ButtonForPages from "./otherComponents/ButtonForPages";
+import Logo from "./UI/Logo/Logo";
+import RouteInvestiments from "./UI/InfoPageInvest/RouteInvestiments";
+import InfoInvestiments from "./UI/InfoPageInvest/InfoInvestiments";
+import Step from "./StepFolder/Step";
+import ContactDetail from "./ContactForm/ContactDetail";
+import ButtonForPages from "./UI/Button/ButtonForPages";
 
 export default function Pages1() {
   return (
@@ -21,7 +21,7 @@ export default function Pages1() {
         />
       </div>
       <div className="container__right">
-        <GetHelp />
+        <Step />
         <ContactDetail />
         <ButtonForPages
           numberPage={2}

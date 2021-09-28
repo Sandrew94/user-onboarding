@@ -14,10 +14,11 @@
   letter-spacing: 0.2px;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .btn-color-blue {
-  color: $background-blue;
+  color: #35a0ee;
 }
 
 .btn-no-background {
@@ -30,7 +31,7 @@
 }
 
 .btn-background-color-blue-light {
-  background-color: $color-light-blue;
+  background-color: #35a0ee;
   color: #fff;
 }
 

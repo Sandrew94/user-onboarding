@@ -5,13 +5,20 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: $background-body;
+  @media only screen and (max-width: 1440px) {
+    min-height: 100vh;
+  }
 }
 
 //Container for background colors
 .container {
   display: flex;
-  min-height: 80vh;
-  width: 110vh;
+  min-height: 90vh;
+  //width: 110vh;
+  width: 100%;
+  padding: 1.5rem;
+  @media only screen and (max-width: 1440px) {
+  }
 
   &__right {
     background-color: $background-white;
@@ -21,6 +28,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media only screen and (max-width: 1440px) {
+      width: 70%;
+    }
   }
   &__left {
     width: 35%;
@@ -30,6 +40,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media only screen and (max-width: 1440px) {
+      width: 30%;
+    }
   }
 }
 

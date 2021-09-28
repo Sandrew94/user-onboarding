@@ -1,0 +1,21 @@
+.get__help {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 7rem 0 7rem;
+}
+
+.get__help-text {
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  opacity: 0.8;
+  color: #a4aeb4;
+}
+.get__help-text-link {
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #2696e8;
+}
