@@ -1,5 +1,7 @@
 import React from "react";
-import ContactForm from "./ContactForm";
+// import ContactForm from "./ContactForm";
+// import { ContactFormDetails } from "./ContactFormDetails";
+import ContactFormDetailsNew from "./ContactFormDetailsNew";
 
 export default function ContactDetail() {
   return (
@@ -11,7 +13,9 @@ export default function ContactDetail() {
           started by letting us know a little bit about you
         </span>
       </div>
-      <ContactForm />
+      {/* <ContactForm /> */}
+      {/* <ContactFormDetails /> */}
+      <ContactFormDetailsNew />
 
       <div className="contact-details__container">
         <h1 className="contact-details__container-title bold font-size-title">
