@@ -1,9 +1,7 @@
 import React from "react";
-// import ContactForm from "./ContactForm";
-// import { ContactFormDetails } from "./ContactFormDetails";
 import ContactFormDetailsNew from "./ContactFormDetailsNew";
 
-export default function ContactDetail() {
+export default function ContactDetail({ setButtonDisabled, setForm }) {
   return (
     <div className="contact-details">
       <div className="contact-details__container">
@@ -13,9 +11,10 @@ export default function ContactDetail() {
           started by letting us know a little bit about you
         </span>
       </div>
-      {/* <ContactForm /> */}
-      {/* <ContactFormDetails /> */}
-      <ContactFormDetailsNew />
+      <ContactFormDetailsNew
+        setButtonDisabled={setButtonDisabled}
+        setForm={setForm}
+      />
 
       <div className="contact-details__container">
         <h1 className="contact-details__container-title bold font-size-title">

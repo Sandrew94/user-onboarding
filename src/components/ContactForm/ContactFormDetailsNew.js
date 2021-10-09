@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import useInput from "../../hooks/use-input";
 import classes from "./ContactFormDetails.module.css";
 import validateInput from "../utils/validateInput";
 
-export default function ContactFormDetailsNew() {
+export default function ContactFormDetailsNew({ setButtonDisabled, setForm }) {
   //FullName Input
   const {
     value: fullNameEntered,
@@ -112,22 +112,36 @@ export default function ContactFormDetailsNew() {
 
   //form handler
 
-  const formSubmitHandler = (event) => {
-    event.preventDefault();
-    if (
-      !enteredFullNameIsValid ||
-      !enteredPhoneIsValid ||
-      !enteredEmailIsValid ||
-      !enteredCountryIsValid
-    ) {
-      return;
-    }
+  const formSubmitHandler = useCallback(
+    (event) => {
+      //event.preventDefault();
+      console.log("form");
+      if (
+        !enteredFullNameIsValid ||
+        !enteredPhoneIsValid ||
+        !enteredEmailIsValid ||
+        !enteredCountryIsValid
+      ) {
+        return;
+      }
 
-    fullNameReset();
-    phoneReset();
-    emailReset();
-    countryReset();
-  };
+      // fullNameReset();
+      // phoneReset();
+      // emailReset();
+      // countryReset();
+    },
+    [
+      enteredFullNameIsValid,
+      enteredPhoneIsValid,
+      enteredEmailIsValid,
+      enteredCountryIsValid,
+    ]
+  );
+
+  useEffect(() => {
+    setForm(() => formSubmitHandler);
+    setButtonDisabled(formIsValid);
+  }, [setButtonDisabled, formIsValid, setForm, formSubmitHandler]);
 
   //classes error handler
 

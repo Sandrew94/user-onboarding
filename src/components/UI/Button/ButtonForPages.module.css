@@ -38,3 +38,7 @@
 .btn-margin-left {
   margin-left: 3rem;
 }
+
+.disabled {
+  background-color: #2ca0f2b1;
+}
