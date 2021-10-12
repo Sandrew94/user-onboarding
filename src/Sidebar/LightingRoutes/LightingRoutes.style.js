@@ -1,32 +1,39 @@
-@media only screen and (max-width: 1440px) {
-  .route_invest {
-    margin: auto 0.5rem;
-  }
-}
+import styled from "styled-components";
 
-.route_invest {
+//Wrapper
+
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: 3rem;
-}
 
-.route_invest_single-container {
+  @media only screen and (max-width: 1440px) {
+    margin: auto 0.5rem;
+  }
+`;
+
+export const WrapperSquare = styled.div`
   display: flex;
   align-items: center;
   width: 80%;
   position: relative;
   margin-top: 4rem;
-}
-.route_invest_quadrato {
+`;
+
+//Square style
+
+export const FirstSquare = styled.span`
   width: 3rem;
   height: 3rem;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 4px;
   z-index: 8;
   position: relative;
-}
-.route_invest_quadrato1 {
+  background-color: ${(props) => props.backgroundColor};
+`;
+
+export const SecondSquare = styled.span`
   z-index: 5;
   top: 11%;
   left: 10%;
@@ -35,8 +42,12 @@
   padding: 0.6rem;
   background-color: rgba(255, 255, 255, 0.5);
   border: 6px solid #35a0ee;
-}
-.route_invest_rettangolo-1 {
+  background-color: ${(props) => props.backgroundColor};
+`;
+
+//Rectangle divider
+
+export const FirstRectangle = styled.span`
   position: absolute;
   top: 240%;
   width: 0.4rem;
@@ -44,8 +55,10 @@
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 1px;
   clip-path: inset(0 24% 0 13% round 5%);
-}
-.route_invest_rettangolo-2 {
+  background-color: ${(props) => props.backgroundColor};
+`;
+
+export const SecondRectangle = styled.span`
   position: absolute;
   top: 380%;
   clip-path: inset(0 24% 0 13% round 5%);
@@ -54,25 +67,17 @@
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 1px;
   clip-path: inset(0 24% 0 13% round 5%);
-}
-.route_invest_text {
+  background-color: ${(props) => props.backgroundColor};
+`;
+
+//Text styling
+
+export const WrapperText = styled.span`
   font-family: "Montserrat Alternates", sans-serif;
   margin-left: 2rem;
   font-size: 1.8rem;
   line-height: 2.4rem;
   letter-spacing: 0.2px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.deactivated {
-  background-color: #35a0ee;
-}
-
-.active-background {
-  background-color: #fff;
-}
-
-.active-text {
-  color: #fff;
-}
+  color: ${(props) => props.color};
+`;
