@@ -1,9 +1,9 @@
 import React from "react";
 import ButtonForPages from "./UI/Button/ButtonForPages";
 
-import Logo from "./UI/Logo/Logo";
+import Logo from "../Sidebar/Logo/Logo";
 import RouteInvestiments from "./UI/InfoPageInvest/RouteInvestiments";
-import InfoInvestiments from "./UI/InfoPageInvest/InfoInvestiments";
+import InvestitorQuotes from "../Sidebar/InvestitorQuotes/InvestitorQuotes";
 
 import Step from "./StepFolder/Step";
 
@@ -13,7 +13,7 @@ export default function Pages3() {
       <div className="container__left">
         <Logo />
         <RouteInvestiments />
-        <InfoInvestiments
+        <InvestitorQuotes
           text={
             "United Properties is about fast & easy searching, buying, selling and investing ever — online, with an expert by our side"
           }

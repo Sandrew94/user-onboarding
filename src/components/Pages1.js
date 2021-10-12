@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Logo from "./UI/Logo/Logo";
+import Logo from "../Sidebar/Logo/Logo";
 import RouteInvestiments from "./UI/InfoPageInvest/RouteInvestiments";
-import InfoInvestiments from "./UI/InfoPageInvest/InfoInvestiments";
+import InvestitorQuotes from "../Sidebar/InvestitorQuotes/InvestitorQuotes";
 import Step from "./StepFolder/Step";
 import ContactDetail from "./ContactForm/ContactDetail";
 import ButtonForPages from "./UI/Button/ButtonForPages";
@@ -15,7 +15,7 @@ export default function Pages1() {
       <div className="container__left">
         <Logo />
         <RouteInvestiments />
-        <InfoInvestiments
+        <InvestitorQuotes
           text={
             "We care about your time, that's why we created a 3-stage onboarding that will not take more than 5 minutes to complete"
           }
