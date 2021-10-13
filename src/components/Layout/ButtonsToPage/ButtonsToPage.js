@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./ButtonForPages.module.css";
-import Button from "./Button";
+import Button from "../../Button/Button";
 
-export default function ButtonForPages(props) {
+export default function ButtonsToPage(props) {
   const { backPage, numberPage, text, backText, buttonDisabled, form } = props;
 
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import up from "../../images/UP.svg";
+import up from "../../../../assets/images/UP.svg";
 import {
   Wrapper,
   Backtips,

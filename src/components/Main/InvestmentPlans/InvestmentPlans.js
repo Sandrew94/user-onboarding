@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import StepProgressBar from "./StepProgressBar";
-import { squareInput, fromInput } from "../utils/functionBar";
+import { squareInput, fromInput } from "../../../utils/functionBar";
 
 export default function InvestmentPlans() {
   const [from, setFrom] = useState("");

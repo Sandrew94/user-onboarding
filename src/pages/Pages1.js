@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import Logo from "../Sidebar/Logo/Logo";
-import LightingRoutes from "../Sidebar/LightingRoutes/LightingRoutes";
-import InvestitorQuotes from "../Sidebar/InvestitorQuotes/InvestitorQuotes";
-import Step from "./StepFolder/Step";
-import ContactDetail from "./ContactForm/ContactDetail";
-import ButtonForPages from "./UI/Button/ButtonForPages";
+import Logo from "../components/Layout/Sidebar/Logo/Logo";
+
+import LightingRoutes from "../components/Layout/Sidebar/LightingRoutes/LightingRoutes";
+import InvestitorQuotes from "../components/Layout/Sidebar/InvestitorQuotes/InvestitorQuotes";
+import GetHelp from "../components/Layout/GetHelp/GetHelp";
+
+import ContactDetail from "../components/Main/ContactForm/ContactDetail";
+import ButtonsToPage from "../components/Layout/ButtonsToPage/ButtonsToPage";
 
 export default function Pages1() {
   const [buttonDisabled, setButtonDisabled] = useState("");
@@ -24,12 +26,12 @@ export default function Pages1() {
         />
       </div>
       <div className="container__right">
-        <Step />
+        <GetHelp />
         <ContactDetail
           setButtonDisabled={setButtonDisabled}
           setForm={setForm}
         />
-        <ButtonForPages
+        <ButtonsToPage
           form={form}
           buttonDisabled={buttonDisabled}
           numberPage={2}

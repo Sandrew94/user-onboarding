@@ -1,11 +1,11 @@
 import React from "react";
-import ButtonForPages from "./UI/Button/ButtonForPages";
+import ButtonsToPage from "../components/Layout/ButtonsToPage/ButtonsToPage";
 
-import Logo from "../Sidebar/Logo/Logo";
-import LightingRoutes from "../Sidebar/LightingRoutes/LightingRoutes";
-import InvestitorQuotes from "../Sidebar/InvestitorQuotes/InvestitorQuotes";
+import Logo from "../components/Layout/Sidebar/Logo/Logo";
+import LightingRoutes from "../components/Layout/Sidebar/LightingRoutes/LightingRoutes";
+import InvestitorQuotes from "../components/Layout/Sidebar/InvestitorQuotes/InvestitorQuotes";
 
-import Step from "./StepFolder/Step";
+import GetHelp from "../components/Layout/GetHelp/GetHelp";
 
 export default function Pages3() {
   return (
@@ -22,8 +22,8 @@ export default function Pages3() {
         />
       </div>
       <div className="container__right">
-        <Step />
-        <ButtonForPages
+        <GetHelp />
+        <ButtonsToPage
           numberPage={3}
           backPage={"/pages2"}
           text={"Finish"}

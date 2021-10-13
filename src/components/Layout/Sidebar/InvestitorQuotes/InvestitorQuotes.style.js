@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import backtipsPhoto from "../../images/‘‘.svg";
+import backtipsPhoto from "../../../../assets/images/‘‘.svg";
 
 //Wrapper and container components
 

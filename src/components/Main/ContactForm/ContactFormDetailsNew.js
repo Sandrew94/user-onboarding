@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
-import useInput from "../../hooks/use-input";
+import useInput from "../../../hooks/use-input";
 import classes from "./ContactFormDetails.module.css";
-import validateInput from "../utils/validateInput";
+import validateInput from "../../../utils/validateInput";
 
 export default function ContactFormDetailsNew({ setButtonDisabled, setForm }) {
   //FullName Input
@@ -13,7 +13,6 @@ export default function ContactFormDetailsNew({ setButtonDisabled, setForm }) {
     inputBlurHandler: fullNameBlurHandler,
     inputClickHandler: fullNameClickHandler,
     click: fullNameClickClasses,
-    reset: fullNameReset,
   } = useInput((value) => {
     const inputValidFullName = {
       value: value,
@@ -35,7 +34,6 @@ export default function ContactFormDetailsNew({ setButtonDisabled, setForm }) {
     hasError: phoneHasError,
     valueChangeHandler: phoneChangeHandler,
     inputBlurHandler: phoneBlurHandler,
-    reset: phoneReset,
   } = useInput((value) => {
     const inputValidPhone = {
       value: value,
@@ -60,7 +58,6 @@ export default function ContactFormDetailsNew({ setButtonDisabled, setForm }) {
     inputBlurHandler: emailBlurHandler,
     inputClickHandler: emailClickHandler,
     click: emailClickClasses,
-    reset: emailReset,
   } = useInput((value) => {
     const inputValidEmail = {
       value: value,
@@ -86,7 +83,6 @@ export default function ContactFormDetailsNew({ setButtonDisabled, setForm }) {
     inputBlurHandler: countryBlurHandler,
     inputClickHandler: countryClickHandler,
     click: countryClickClasses,
-    reset: countryReset,
   } = useInput((value) => {
     const inputValidCountry = {
       value: value,
