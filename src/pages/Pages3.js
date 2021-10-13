@@ -1,10 +1,8 @@
 import React from "react";
 import ButtonsToPage from "../components/Layout/ButtonsToPage/ButtonsToPage";
-
 import Logo from "../components/Layout/Sidebar/Logo/Logo";
 import LightingRoutes from "../components/Layout/Sidebar/LightingRoutes/LightingRoutes";
 import InvestitorQuotes from "../components/Layout/Sidebar/InvestitorQuotes/InvestitorQuotes";
-
 import GetHelp from "../components/Layout/GetHelp/GetHelp";
 
 export default function Pages3() {
