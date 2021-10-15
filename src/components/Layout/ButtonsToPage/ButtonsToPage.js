@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Button from "../../Button/Button";
 import {
   Wrapper,
@@ -11,24 +11,41 @@ import {
 } from "./ButtonToPage.style";
 
 export default function ButtonsToPage(props) {
-  const { backPage, numberPage, text, backText, buttonDisabled, form } = props;
+  const { buttonDisabled, form } = props;
+
+  const location = useLocation();
+
+  const dinamicPath = location.pathname === "/pages2" ? 3 : 2;
+
+  const dinamicBackText =
+    location.pathname === "/"
+      ? "Back to the homepage"
+      : "Back to the previous step";
+
+  const dinamicPreviousStep = location.pathname === "/pages2" ? "/" : "/pages2";
+
+  const dinamicNextPageText =
+    location.pathname === "/pages3" ? "Finish" : "Next step ➝";
 
   return (
     <Wrapper>
-      <Link to={`${backPage}`}>
-        <Button backToHomepage={BtnBackHomepage}>&#8592; {backText}</Button>
+      <Link to={`${dinamicPreviousStep}`}>
+        <Button type="button" backToHomepage={BtnBackHomepage}>
+          &#8592; {dinamicBackText}
+        </Button>
       </Link>
       <EmptyDivDivider>
-        <Link to={`/pages${numberPage}`}>
+        <Link to={`/pages${dinamicPath}`}>
           <Button
+            type="button"
             skipForNow={skipForNowStyle}
-            disabled={text === "Finish" ? true : false}
+            disabled={dinamicNextPageText === "Finish" ? true : false}
           >
             Skip for now
           </Button>
         </Link>
 
-        <Link to={`/pages${numberPage}`} onClick={form}>
+        <Link to={`/pages${dinamicPath}`} onClick={form}>
           <Button
             disabled={buttonDisabled ? false : true}
             type="submit"
@@ -37,10 +54,10 @@ export default function ButtonsToPage(props) {
             }
             nextStep={nextStepStyle}
             onClick={() => {
-              return text === "Finish" ? alert("Finish") : "";
+              return dinamicNextPageText === "Finish" ? alert("Finish") : "";
             }}
           >
-            {text}
+            {dinamicNextPageText}
           </Button>
         </Link>
       </EmptyDivDivider>

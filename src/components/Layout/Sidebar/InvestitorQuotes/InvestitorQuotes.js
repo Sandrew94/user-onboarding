@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import up from "../../../../assets/images/UP.svg";
 import {
   Wrapper,
@@ -12,9 +13,15 @@ import {
   FooterLogoContainer,
   FooterLogo,
 } from "./InvestitorQuotes.style.js";
+import { investitorQuotesText } from "./InvestitorQuote.text.js";
 
-export default function InfoInvestiments(props) {
-  const { text, nameInvest, roleInvest } = props;
+export default function InfoInvestiments() {
+  const location = useLocation();
+
+  const { text, nameInvest, roleInvest } = investitorQuotesText(
+    location.pathname
+  );
+
   return (
     <Wrapper>
       <Backtips></Backtips>
