@@ -1,91 +1,91 @@
 .inv__plans {
-  &-container {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    align-items: center;
-  }
+  // &-container {
+  //   display: flex;
+  //   flex-direction: column;
+  //   width: 90%;
+  //   align-items: center;
+  // }
 
   &-title {
-    display: flex;
-    flex-direction: column;
-    width: 56.2rem;
-    margin-bottom: 4rem;
-    margin-right: 4rem;
-    &-big {
-      font-family: "Montserrat Alternates", sans-serif;
-      font-weight: 800;
-      font-style: normal;
-      font-size: 2.8rem;
-      line-height: 3.6rem;
-      letter-spacing: 0.2px;
-    }
-    &-small {
-      font-weight: 500;
-      font-style: normal;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      letter-spacing: 0.2px;
-      color: $color-dark-grey;
-      padding-top: 1.5rem;
-    }
+    // display: flex;
+    // flex-direction: column;
+    // width: 56.2rem;
+    // margin-bottom: 4rem;
+    // margin-right: 4rem;
+    // &-big {
+    //   font-family: "Montserrat Alternates", sans-serif;
+    //   font-weight: 800;
+    //   font-style: normal;
+    //   font-size: 2.8rem;
+    //   line-height: 3.6rem;
+    //   letter-spacing: 0.2px;
+    // }
+    // &-small {
+    //   font-weight: 500;
+    //   font-style: normal;
+    //   font-size: 1.6rem;
+    //   line-height: 2.4rem;
+    //   letter-spacing: 0.2px;
+    //   color: $color-dark-grey;
+    //   padding-top: 1.5rem;
+    // }
   }
 
   ////////////////////////////////
 
-  &-planning-year-container {
-    display: flex;
-    flex-direction: column;
-    justify-self: flex-start;
-    margin-bottom: 4rem;
-    margin-left: 1rem;
-  }
+  // &-planning-year-container {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-self: flex-start;
+  //   margin-bottom: 4rem;
+  //   margin-left: 1rem;
+  // }
 
-  &-title-medium {
-    font-family: "Montserrat Alternates", sans-serif;
-    font-size: 2.1rem;
-    line-height: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 4rem;
-  }
+  // &-title-medium {
+  //   font-family: "Montserrat Alternates", sans-serif;
+  //   font-size: 2.1rem;
+  //   line-height: 2.8rem;
+  //   font-weight: 700;
+  //   margin-bottom: 4rem;
+  // }
 
-  &-money-input {
-    width: 100%;
-    display: flex;
-  }
+  // &-money-input {
+  //   width: 100%;
+  //   display: flex;
+  // }
 
-  &-money-input-container {
-    margin-right: 3rem;
-  }
+  // &-money-input-container {
+  //   margin-right: 3rem;
+  // }
 
-  &-money-input-from {
-    width: 100%;
-    font-size: 2.1rem;
-    line-height: 2.8rem;
-    letter-spacing: 0.2px;
-    font-weight: 600;
-    border: 0;
-    outline: none;
-    border-bottom: 2px solid #d5d9dc;
-  }
+  // &-money-input-from {
+  //   width: 100%;
+  //   font-size: 2.1rem;
+  //   line-height: 2.8rem;
+  //   letter-spacing: 0.2px;
+  //   font-weight: 600;
+  //   border: 0;
+  //   outline: none;
+  //   border-bottom: 2px solid #d5d9dc;
+  // }
 
-  &-money-input-to {
-    width: 100%;
-    font-size: 2.1rem;
-    line-height: 2.8rem;
-    letter-spacing: 0.2px;
-    font-weight: 600;
-    border: 0;
-    outline: none;
-    border-bottom: 2px solid #d5d9dc;
-  }
+  // &-money-input-to {
+  //   width: 100%;
+  //   font-size: 2.1rem;
+  //   line-height: 2.8rem;
+  //   letter-spacing: 0.2px;
+  //   font-weight: 600;
+  //   border: 0;
+  //   outline: none;
+  //   border-bottom: 2px solid #d5d9dc;
+  // }
 
   &-money-input-span {
-    font-weight: 500;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    letter-spacing: 0.2px;
-    color: $color-dark-grey;
+    // font-weight: 500;
+    // font-size: 1.4rem;
+    // line-height: 2rem;
+    // letter-spacing: 0.2px;
+    // color: $color-dark-grey;
   }
 
   ////////////////////////////////////////////////////////////////
@@ -164,54 +164,54 @@
 
   ////////////////////////////////////////////////////////////////
 
-  &-money-investor-container {
-    margin-top: 3rem;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-self: flex-start;
-    align-items: flex-start;
-    @media only screen and (max-width: 1440px) {
-      width: 85%;
-    }
-  }
+  // &-money-investor-container {
+  //   margin-top: 3rem;
+  //   width: 70%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-self: flex-start;
+  //   align-items: flex-start;
+  //   @media only screen and (max-width: 1440px) {
+  //     width: 85%;
+  //   }
+  // }
 
-  &-money-investor-title {
-    font-family: "Montserrat Alternates", sans-serif;
-    font-weight: 700;
-    font-size: 2.1rem;
-    line-height: 2.8rem;
-    padding-bottom: 4rem;
-  }
+  // &-money-investor-title {
+  //   font-family: "Montserrat Alternates", sans-serif;
+  //   font-weight: 700;
+  //   font-size: 2.1rem;
+  //   line-height: 2.8rem;
+  //   padding-bottom: 4rem;
+  // }
 
   ////////////////////////////////////////////////////////////////
 
   &-container-btn {
-    font-weight: 700;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-    display: flex;
-    justify-content: space-between;
-    width: 52%;
-    @media only screen and (max-width: 1440px) {
-      width: 70%;
-      margin: auto 2;
-    }
+    // font-weight: 700;
+    // font-size: 1.6rem;
+    // line-height: 2.4rem;
+    // display: flex;
+    // justify-content: space-between;
+    // width: 52%;
+    // @media only screen and (max-width: 1440px) {
+    //   width: 70%;
+    //   margin: auto 2;
+    // }
 
-    &-label {
-      padding: 1.5rem 3rem;
-      border: 2px solid #d5d9dc;
-      border-radius: 4px;
-    }
+    // &-label {
+    //   padding: 1.5rem 3rem;
+    //   border: 2px solid #d5d9dc;
+    //   border-radius: 4px;
+    // }
 
-    &-label-checkmark {
-      padding: 2rem;
-      font-weight: 700;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      letter-spacing: 0.2px;
-      color: $color-black-dark;
-    }
+    // &-label-checkmark {
+    //   padding: 2rem;
+    //   font-weight: 700;
+    //   font-size: 1.6rem;
+    //   line-height: 2.4rem;
+    //   letter-spacing: 0.2px;
+    //   color: $color-black-dark;
+    // }
   }
 }
 
@@ -259,14 +259,14 @@
 //   left: 9rem;
 // }
 
-.active-1 {
-  background: #f7fbff;
-  border: 2px solid #35a0ee;
-}
+// .active-1 {
+//   background: #f7fbff;
+//   border: 2px solid #35a0ee;
+// }
 
-.color-blue {
-  color: #35a0ee;
-}
+// .color-blue {
+//   color: #35a0ee;
+// }
 
 // .inv__plans-absolute-line {
 //   background: #35a0ee;
@@ -276,19 +276,19 @@
 //   height: 4px;
 // }
 
-input[type="radio"] {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
-  transform: scale(1.5);
-}
+// input[type="radio"] {
+//   -ms-transform: scale(1.5); /* IE 9 */
+//   -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+//   transform: scale(1.5);
+// }
 
-.active-input-border {
-  border-bottom: 2px solid $color-light-blue;
-}
+// .active-input-border {
+//   border-bottom: 2px solid $color-light-blue;
+// }
 
-.active-input-color-name {
-  color: $color-light-blue;
-}
+// .active-input-color-name {
+//   color: $color-light-blue;
+// }
 
 #rectangleUp-1 {
   background-color: red;

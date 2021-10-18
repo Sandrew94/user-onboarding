@@ -24,8 +24,11 @@ function App() {
             </Layout>
           </Route>
           <Route path="/pages2">
-            <Layout>
-              <InvestmentPlans />
+            <Layout onButtonDisabled={buttonDisabled} onForm={form}>
+              <InvestmentPlans
+                setButtonDisabled={setButtonDisabled}
+                setForm={setForm}
+              />
             </Layout>
           </Route>
           <Route path="/pages3">
