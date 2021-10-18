@@ -1,33 +1,38 @@
 import React from "react";
-import ContactFormDetailsNew from "./ContactFormDetailsNew";
+import ContactFormInput from "./ContactFormInput/ContactFormInput";
+import {
+  Wrapper,
+  ContainerTitleText,
+  Title,
+  Description,
+  ExpandPrivacy,
+  TitlePrivacy,
+} from "./ContactDetail.style";
 
 export default function ContactDetail({ setButtonDisabled, setForm }) {
   return (
-    <div className="contact-details">
-      <div className="contact-details__container">
-        <h1 className="contact-details__container-title">Contact details</h1>
-        <span className="contact-details__container-title-text padding-top-mid">
+    <Wrapper>
+      <ContainerTitleText>
+        <Title>Contact details</Title>
+        <Description>
           Welcome to United Properties, we are glad to see you! Let’s get
           started by letting us know a little bit about you
-        </span>
-      </div>
-      <ContactFormDetailsNew
+        </Description>
+      </ContainerTitleText>
+      <ContactFormInput
         setButtonDisabled={setButtonDisabled}
         setForm={setForm}
       />
 
-      <div className="contact-details__container">
-        <h1 className="contact-details__container-title bold font-size-title">
-          Privacy Policy
-        </h1>
-        <div className="contact-details__container-title-text padding-top-low">
+      <ContainerTitleText>
+        <TitlePrivacy>Privacy Policy</TitlePrivacy>
+        <Description>
           We know you care about how your personal information is used and
           shared, so we take your privacy seriously
-        </div>
-        <span className="contact-details__expand-privacy">
-          Expand privacy policy &#8594;
-        </span>
-      </div>
-    </div>
+        </Description>
+
+        <ExpandPrivacy> Expand privacy policy &#8594;</ExpandPrivacy>
+      </ContainerTitleText>
+    </Wrapper>
   );
 }
