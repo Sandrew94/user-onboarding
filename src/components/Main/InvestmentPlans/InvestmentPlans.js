@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import StepProgressBar from "./StepProgressBar";
-import { squareInput, fromInput } from "../../../utils/functionBar";
 import ButtonRadio from "./ButtonsRadio/ButtonRadio";
 import FromInput from "./Inputs/FromInput";
 import ToInput from "./Inputs/ToInput";
@@ -66,10 +64,7 @@ export default function InvestmentPlans({ setForm, setButtonDisabled }) {
           <ToInput setValidation={setValidation} validation={validation} />
         </MoneyInputWrapper>
 
-        <StepProgressBar
-        // from={fromInput(from, squareInput(to))}
-        // to={squareInput(to)}
-        />
+        {/* {//PRogressbar} */}
       </TitlePlanninng>
 
       <FooterWrapper>

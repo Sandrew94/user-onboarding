@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./scss/index.scss";
 import Layout from "./pages/Layout";
 import ContactDetail from "./components/Main/ContactForm/ContactDetail";
 import InvestmentPlans from "./components/Main/InvestmentPlans/InvestmentPlans";
