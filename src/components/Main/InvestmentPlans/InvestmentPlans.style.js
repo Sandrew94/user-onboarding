@@ -89,6 +89,7 @@ export const InputStyle = styled.input`
   letter-spacing: 0.02em;
   text-align: left;
   border: none;
+  outline: none;
   border-bottom: 2px solid ${(props) => props.borderColor};
 
   :focus {
