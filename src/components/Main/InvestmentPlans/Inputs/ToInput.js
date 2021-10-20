@@ -4,7 +4,12 @@ import validateInput from "../../../../utils/validateInput";
 
 import { LabelWrapper, SpanText, InputStyle } from "../InvestmentPlans.style";
 
-export default function ToInput({ setValidation, validation }) {
+export default function ToInput({
+  setValidation,
+  validation,
+  dataInput,
+  setDataInput,
+}) {
   //To-Input
   const {
     value: ToInputEntered,
@@ -33,8 +38,15 @@ export default function ToInput({ setValidation, validation }) {
     };
 
     setValidation(validate);
+
+    let passData = {
+      ...dataInput,
+      toInput: ToInputEntered,
+    };
+
+    setDataInput(passData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setValidation, ToInputIsValid]);
+  }, [setValidation, ToInputIsValid, setDataInput, ToInputEntered]);
 
   //Click color
   const toInputSpan = ToInputClick ? "#35A0EE" : "#a4aeb4";

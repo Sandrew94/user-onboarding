@@ -26,8 +26,6 @@ yarn-error.log*
 flowchart-userOnBoarding.shapex
 
 #unused files
-ProgressBar.js
-ProgressBarSteps.js
 remove 
 node_modules.nosync
 OLDFORM

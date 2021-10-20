@@ -56,6 +56,14 @@ const validateInput = function (validateInput) {
     isValid = isValid && false;
   }
   ////////////////////////////////
+
+  //minValue
+
+  if (validateInput.minValue > validateInput.value) {
+    isValid = isValid && false;
+  }
+
+  ////////////////////////////////////////////////////////////////
   return isValid;
 };
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import ButtonRadio from "./ButtonsRadio/ButtonRadio";
 import FromInput from "./Inputs/FromInput";
 import ToInput from "./Inputs/ToInput";
+import ProgressBar from "./ProgressBar/ProgressBar";
 
 import {
   Wrapper,
@@ -20,6 +21,11 @@ export default function InvestmentPlans({ setForm, setButtonDisabled }) {
     ToInputIsValid: false,
     FromInputIsValid: false,
     buttonState: false,
+  });
+
+  const [dataInput, setDataInput] = useState({
+    fromInput: 0,
+    toInput: 0,
   });
 
   //form validation
@@ -60,11 +66,21 @@ export default function InvestmentPlans({ setForm, setButtonDisabled }) {
           How much are you planning to invest in this year?
         </TitleMedium>
         <MoneyInputWrapper>
-          <FromInput setValidation={setValidation} validation={validation} />
-          <ToInput setValidation={setValidation} validation={validation} />
+          <FromInput
+            setValidation={setValidation}
+            validation={validation}
+            setDataInput={setDataInput}
+            dataInput={dataInput}
+          />
+          <ToInput
+            setValidation={setValidation}
+            validation={validation}
+            setDataInput={setDataInput}
+            dataInput={dataInput}
+          />
         </MoneyInputWrapper>
 
-        {/* {//PRogressbar} */}
+        <ProgressBar dataInput={dataInput} />
       </TitlePlanninng>
 
       <FooterWrapper>

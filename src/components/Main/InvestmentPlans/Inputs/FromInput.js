@@ -4,7 +4,12 @@ import validateInput from "../../../../utils/validateInput";
 
 import { LabelWrapper, SpanText, InputStyle } from "../InvestmentPlans.style";
 
-export default function FromInput({ setValidation, validation }) {
+export default function FromInput({
+  setValidation,
+  validation,
+  dataInput,
+  setDataInput,
+}) {
   //From-Input
   const {
     value: FromInputEntered,
@@ -21,6 +26,7 @@ export default function FromInput({ setValidation, validation }) {
       whiteSpace: true,
       allowNumber: true,
       allowStrings: false,
+      minValue: 9999,
     };
 
     return validateInput(inputValidNumber);
@@ -31,10 +37,18 @@ export default function FromInput({ setValidation, validation }) {
       ...validation,
       FromInputIsValid: FromInputIsValid,
     };
-
     setValidation(validate);
+
+    //Pass data to progressBar
+
+    let passData = {
+      ...dataInput,
+      fromInput: FromInputEntered,
+    };
+
+    setDataInput(passData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setValidation, FromInputIsValid]);
+  }, [setValidation, FromInputIsValid, setDataInput, FromInputEntered]);
 
   //Click color
   const fromInputSpan = FromInputClick ? "#35A0EE" : "#a4aeb4";
