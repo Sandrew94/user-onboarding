@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Wrapper,
   WrapperTitle,
@@ -22,7 +22,7 @@ const clientHouse = [
   "Other",
 ];
 
-export default function InvestmentPreferences() {
+export default function InvestmentPreferences({ setButtonDisabled }) {
   const [checkedState, setCheckedState] = useState(
     new Array(clientHouse.length).fill(false)
   );
@@ -53,6 +53,17 @@ export default function InvestmentPreferences() {
       />
     );
   });
+
+  //form validation
+
+  let formIsValid = false;
+  if (checkedState.some((el) => el === true)) {
+    formIsValid = true;
+  }
+
+  useEffect(() => {
+    setButtonDisabled(formIsValid);
+  }, [formIsValid, setButtonDisabled]);
 
   return (
     <Wrapper>

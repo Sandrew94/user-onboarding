@@ -32,8 +32,8 @@ function App() {
             </Layout>
           </Route>
           <Route path="/pages3">
-            <Layout>
-              <InvestmentPreferences />
+            <Layout onButtonDisabled={buttonDisabled}>
+              <InvestmentPreferences setButtonDisabled={setButtonDisabled} />
             </Layout>
           </Route>
         </Switch>
