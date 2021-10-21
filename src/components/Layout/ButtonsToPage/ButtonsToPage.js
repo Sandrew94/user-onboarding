@@ -15,27 +15,34 @@ export default function ButtonsToPage(props) {
 
   const location = useLocation();
 
-  const dinamicPath = location.pathname === "/pages2" ? 3 : 2;
+  const dinamicPath = (location) => {
+    if (location === "/pages3") return "/clientreport";
+    return location === "/pages2" ? 3 : 2;
+  };
 
   const dinamicBackText =
     location.pathname === "/"
       ? "Back to the homepage"
       : "Back to the previous step";
 
-  const dinamicPreviousStep = location.pathname === "/pages2" ? "/" : "/pages2";
+  const dinamicPreviousStep = (location) => {
+    if (location === "/") return "/";
+    if (location === "/pages2") return "/";
+    else return "/pages2";
+  };
 
   const dinamicNextPageText =
     location.pathname === "/pages3" ? "Finish" : "Next step ➝";
 
   return (
     <Wrapper>
-      <Link to={`${dinamicPreviousStep}`}>
+      <Link to={`${dinamicPreviousStep(location.pathname)}`}>
         <Button type="button" backToHomepage={BtnBackHomepage}>
           &#8592; {dinamicBackText}
         </Button>
       </Link>
       <EmptyDivDivider>
-        <Link to={`/pages${dinamicPath}`}>
+        <Link to={`/pages${dinamicPath(location.pathname)}`}>
           <Button
             type="button"
             skipForNow={skipForNowStyle}
@@ -45,7 +52,7 @@ export default function ButtonsToPage(props) {
           </Button>
         </Link>
 
-        <Link to={`/pages${dinamicPath}`} onClick={form}>
+        <Link to={`/pages${dinamicPath(location.pathname)}`} onClick={form}>
           <Button
             disabled={buttonDisabled ? false : true}
             type="submit"
