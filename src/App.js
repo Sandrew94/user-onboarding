@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "./pages/Layout";
 import ContactDetail from "./components/Main/ContactForm/ContactDetail";
 import InvestmentPlans from "./components/Main/InvestmentPlans/InvestmentPlans";
+import InvestmentPreferences from "./components/Main/InvestmentPreferences/InvestmentPreferences";
 import { GlobalStyle } from "./Global.style.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -31,7 +32,9 @@ function App() {
             </Layout>
           </Route>
           <Route path="/pages3">
-            <Layout></Layout>
+            <Layout>
+              <InvestmentPreferences />
+            </Layout>
           </Route>
         </Switch>
       </Router>
