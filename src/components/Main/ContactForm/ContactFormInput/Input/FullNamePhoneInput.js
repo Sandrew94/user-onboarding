@@ -18,6 +18,7 @@ export default function FullNamePhoneInput({ setValidation }) {
     inputBlurHandler: fullNameBlurHandler,
     inputClickHandler: fullNameClickHandler,
     click: fullNameClickClasses,
+    valueName: fullNameSaveValue,
   } = useInput((value) => {
     const inputValidFullName = {
       value: value,
@@ -29,7 +30,6 @@ export default function FullNamePhoneInput({ setValidation }) {
 
     return validateInput(inputValidFullName);
   });
-
   //Phone numbers input
   const {
     value: phoneEntered,
@@ -37,6 +37,7 @@ export default function FullNamePhoneInput({ setValidation }) {
     hasError: phoneHasError,
     valueChangeHandler: phoneChangeHandler,
     inputBlurHandler: phoneBlurHandler,
+    valuePhone: phoneSaveValue,
   } = useInput((value) => {
     const inputValidPhone = {
       value: value,
@@ -56,7 +57,13 @@ export default function FullNamePhoneInput({ setValidation }) {
     };
 
     setValidation(validateInputs);
-  }, [enteredFullNameIsValid, enteredPhoneIsValid, setValidation]);
+  }, [
+    enteredFullNameIsValid,
+    enteredPhoneIsValid,
+    setValidation,
+    fullNameSaveValue,
+    phoneSaveValue,
+  ]);
 
   //FUll NAME
   const borderColorFullName = fullNameHasError ? `rgb(245, 2, 2)` : `#d5d9dc`;
@@ -67,17 +74,17 @@ export default function FullNamePhoneInput({ setValidation }) {
   const borderColorPhone = phoneHasError ? `rgb(245, 2, 2)` : `#d5d9dc`;
 
   return (
-    <WrapperNamePhone className={`padding-top-mid`}>
+    <WrapperNamePhone>
       <LabelNamePhone htmlFor="full-name">
         <SpanInputDescription clickedColor={clickedColor}>
           Full name
         </SpanInputDescription>
         <InputStyle
           type="text"
-          name="full-name"
+          name="fullName"
           id="full-name"
           borderColor={borderColorFullName}
-          value={fullNameEntered}
+          value={fullNameSaveValue}
           onChange={fullNameChangeHandler}
           onBlur={fullNameBlurHandler}
           onClick={fullNameClickHandler}
@@ -90,7 +97,7 @@ export default function FullNamePhoneInput({ setValidation }) {
           type="text"
           name="phoneNumber"
           borderColor={borderColorPhone}
-          value={phoneEntered}
+          value={phoneSaveValue}
           onChange={phoneChangeHandler}
           onBlur={phoneBlurHandler}
         />

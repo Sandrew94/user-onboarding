@@ -12,6 +12,7 @@ export default function CountryInput({ setValidation, prevValid }) {
 
   const {
     value: countryEntered,
+    valueCountry: storeCountryData,
     isValid: enteredCountryIsValid,
     hasError: countryHasError,
     valueChangeHandler: countryChangeHandler,
@@ -55,7 +56,7 @@ export default function CountryInput({ setValidation, prevValid }) {
           type="text"
           name="country"
           borderColor={borderColorCountry}
-          value={countryEntered}
+          value={storeCountryData}
           onChange={countryChangeHandler}
           onBlur={countryBlurHandler}
           onClick={countryClickHandler}

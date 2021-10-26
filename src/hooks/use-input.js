@@ -1,15 +1,28 @@
 import { useState } from "react";
 
 const useInput = (validateValue) => {
-  const [enteredValue, setEnteredValue] = useState("");
+  const [enteredValue, setEnteredValue] = useState(() => {
+    return {
+      validateInput: "",
+      fullName: JSON.parse(localStorage.getItem("fullName") || ""),
+      phoneNumber: JSON.parse(localStorage.getItem("phoneNumber") || ""),
+      email: JSON.parse(localStorage.getItem("email") || ""),
+      country: JSON.parse(localStorage.getItem("country") || ""),
+    };
+  });
   const [isTouched, setIsTouched] = useState(false);
   const [clickClasses, setClickClasses] = useState(false);
 
-  const valueIsValid = validateValue(enteredValue);
+  const valueIsValid = validateValue(enteredValue.validateInput);
   const hasError = !valueIsValid && isTouched;
 
   const valueChangeHandler = (event) => {
-    setEnteredValue(event.target.value);
+    setEnteredValue({
+      [event.target.name]: event.target.value,
+      validateInput: event.target.value,
+    });
+
+    localStorage.setItem(event.target.name, JSON.stringify(event.target.value));
   };
 
   const inputBlurHandler = () => {
@@ -26,7 +39,11 @@ const useInput = (validateValue) => {
   };
 
   return {
-    value: enteredValue,
+    value: enteredValue.validateInput,
+    valueName: enteredValue.fullName,
+    valuePhone: enteredValue.phoneNumber,
+    valueEmail: enteredValue.email,
+    valueCountry: enteredValue.country,
     isValid: valueIsValid,
     hasError,
     valueChangeHandler,

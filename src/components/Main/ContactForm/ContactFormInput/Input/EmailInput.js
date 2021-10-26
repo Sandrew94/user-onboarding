@@ -12,6 +12,7 @@ export default function EmailInput({ setValidation, prevValid }) {
 
   const {
     value: emailEntered,
+    valueEmail: storeEmailData,
     isValid: enteredEmailIsValid,
     hasError: emailHasError,
     valueChangeHandler: emailChangeHandler,
@@ -56,7 +57,7 @@ export default function EmailInput({ setValidation, prevValid }) {
           type="email"
           name="email"
           borderColor={borderColorEmail}
-          value={emailEntered}
+          value={storeEmailData}
           onChange={emailChangeHandler}
           onBlur={emailBlurHandler}
           onClick={emailClickHandler}
