@@ -11,7 +11,6 @@ import {
 export default function FullNamePhoneInput({ setValidation }) {
   //FullName Input
   const {
-    value: fullNameEntered,
     isValid: enteredFullNameIsValid,
     hasError: fullNameHasError,
     valueChangeHandler: fullNameChangeHandler,
@@ -32,7 +31,6 @@ export default function FullNamePhoneInput({ setValidation }) {
   });
   //Phone numbers input
   const {
-    value: phoneEntered,
     isValid: enteredPhoneIsValid,
     hasError: phoneHasError,
     valueChangeHandler: phoneChangeHandler,

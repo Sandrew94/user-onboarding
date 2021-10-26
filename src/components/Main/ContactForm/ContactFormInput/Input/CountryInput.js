@@ -11,7 +11,6 @@ export default function CountryInput({ setValidation, prevValid }) {
   //COUNTRY INPUT
 
   const {
-    value: countryEntered,
     valueCountry: storeCountryData,
     isValid: enteredCountryIsValid,
     hasError: countryHasError,

@@ -11,7 +11,6 @@ export default function EmailInput({ setValidation, prevValid }) {
   //EMAIL INPUT
 
   const {
-    value: emailEntered,
     valueEmail: storeEmailData,
     isValid: enteredEmailIsValid,
     hasError: emailHasError,
