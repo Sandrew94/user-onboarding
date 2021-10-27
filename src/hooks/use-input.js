@@ -4,10 +4,12 @@ const useInput = (validateValue) => {
   const [enteredValue, setEnteredValue] = useState(() => {
     return {
       validateInput: "",
-      fullName: JSON.parse(localStorage.getItem("fullName") || ""),
-      phoneNumber: JSON.parse(localStorage.getItem("phoneNumber") || ""),
-      email: JSON.parse(localStorage.getItem("email") || ""),
-      country: JSON.parse(localStorage.getItem("country") || ""),
+      fullName: JSON.parse(localStorage.getItem("fullName")) || "",
+      phoneNumber: JSON.parse(localStorage.getItem("phoneNumber")) || "",
+      email: JSON.parse(localStorage.getItem("email")) || "",
+      country: JSON.parse(localStorage.getItem("country")) || "",
+      From: JSON.parse(localStorage.getItem("From")) || "",
+      To: JSON.parse(localStorage.getItem("To")) || "",
     };
   });
   const [isTouched, setIsTouched] = useState(false);
@@ -44,6 +46,8 @@ const useInput = (validateValue) => {
     valuePhone: enteredValue.phoneNumber,
     valueEmail: enteredValue.email,
     valueCountry: enteredValue.country,
+    valueFrom: enteredValue.From,
+    valueTo: enteredValue.To,
     isValid: valueIsValid,
     hasError,
     valueChangeHandler,

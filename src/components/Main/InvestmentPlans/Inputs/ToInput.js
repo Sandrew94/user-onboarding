@@ -13,6 +13,7 @@ export default function ToInput({
   //To-Input
   const {
     value: ToInputEntered,
+    valueTo: saveToInputValue,
     isValid: ToInputIsValid,
     hasError: ToInputHasError,
     inputClickHandler: ToInputClickHandler,
@@ -60,7 +61,7 @@ export default function ToInput({
       <InputStyle
         type="text"
         name="To"
-        value={ToInputEntered}
+        value={saveToInputValue}
         onChange={ToInputChangeHandler}
         onBlur={ToInputBlurHandler}
         onClick={ToInputClickHandler}

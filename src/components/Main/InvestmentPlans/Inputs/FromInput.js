@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import useInput from "../../../../hooks/use-input";
 import validateInput from "../../../../utils/validateInput";
-
 import { LabelWrapper, SpanText, InputStyle } from "../InvestmentPlans.style";
 
 export default function FromInput({
@@ -13,6 +12,7 @@ export default function FromInput({
   //From-Input
   const {
     value: FromInputEntered,
+    valueFrom: saveFromInputValue,
     isValid: FromInputIsValid,
     hasError: FromInputError,
     inputClickHandler: FromInputClickHandler,
@@ -63,7 +63,7 @@ export default function FromInput({
       <InputStyle
         type="text"
         name="From"
-        value={FromInputEntered}
+        value={saveFromInputValue}
         onChange={FromInputChangeHandler}
         onBlur={FromInputBlurHandler}
         onClick={FromInputClickHandler}
