@@ -3,12 +3,7 @@ import useInput from "../../../../hooks/use-input";
 import validateInput from "../../../../utils/validateInput";
 import { LabelWrapper, SpanText, InputStyle } from "../InvestmentPlans.style";
 
-export default function FromInput({
-  setValidation,
-  validation,
-  dataInput,
-  setDataInput,
-}) {
+export default function FromInput({ setValidation, dataInput, setDataInput }) {
   //From-Input
   const {
     value: FromInputEntered,
@@ -33,22 +28,75 @@ export default function FromInput({
   });
 
   useEffect(() => {
-    let validate = {
-      ...validation,
-      FromInputIsValid: FromInputIsValid,
+    const validate = (prevValue) => {
+      return {
+        ...prevValue,
+        FromInputIsValid: FromInputIsValid,
+      };
     };
+
     setValidation(validate);
 
     //Pass data to progressBar
 
-    let passData = {
-      ...dataInput,
-      fromInput: FromInputEntered,
+    let passData = (prevDataInput) => {
+      return {
+        ...prevDataInput,
+        fromInput: FromInputEntered,
+      };
     };
 
     setDataInput(passData);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setValidation, FromInputIsValid, setDataInput, FromInputEntered]);
+
+  ////////////////////////////////////////////////////////////////////////////////
+
+  //Take data from localStorage
+
+  const dataFromLocalStorage = {
+    From: JSON.parse(localStorage.getItem("From")) || "",
+  };
+
+  const { isValid: localStorageFromIsValid } = useInput(() => {
+    const inputValidNumber = {
+      value: dataFromLocalStorage.From,
+      maxLength: 15,
+      whiteSpace: true,
+      allowNumber: true,
+      allowStrings: false,
+      minValue: 9999,
+    };
+
+    return validateInput(inputValidNumber);
+  });
+
+  //2 Validate data from localStorage when page reload
+
+  useEffect(() => {
+    const validateInputs = (prevValue) => {
+      return {
+        ...prevValue,
+        FromInputIsValid: localStorageFromIsValid,
+      };
+    };
+
+    setValidation(validateInputs);
+
+    /////////////////////////////////
+
+    let passData = (prevDataInput) => {
+      return {
+        ...prevDataInput,
+        fromInput: dataFromLocalStorage.From,
+      };
+    };
+
+    setDataInput(passData);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   //Click color
   const fromInputSpan = FromInputClick ? "#35A0EE" : "#a4aeb4";

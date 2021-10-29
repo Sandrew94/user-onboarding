@@ -48,10 +48,16 @@ export default function FullNamePhoneInput({ setValidation }) {
     return validateInput(inputValidPhone);
   });
 
+  //Two use effect
+  //1 Load validation when user Input some values in the field
+
   useEffect(() => {
-    let validateInputs = {
-      fullNameValidate: enteredFullNameIsValid,
-      phoneValidate: enteredPhoneIsValid,
+    const validateInputs = (prevValue) => {
+      return {
+        ...prevValue,
+        fullNameValidate: enteredFullNameIsValid,
+        phoneValidate: enteredPhoneIsValid,
+      };
     };
 
     setValidation(validateInputs);
@@ -62,6 +68,52 @@ export default function FullNamePhoneInput({ setValidation }) {
     fullNameSaveValue,
     phoneSaveValue,
   ]);
+
+  ////// Load data from localStorage
+  const dataFromLocalStorage = {
+    fullName: JSON.parse(localStorage.getItem("fullName")) || "",
+    phoneNumber: JSON.parse(localStorage.getItem("phoneNumber")) || "",
+  };
+
+  const { isValid: localStorageFullNameIsValid } = useInput(() => {
+    const inputValidFullName = {
+      value: dataFromLocalStorage.fullName,
+      maxLength: 20,
+      whiteSpace: true,
+      allowNumber: false,
+      allowStrings: true,
+    };
+
+    return validateInput(inputValidFullName);
+  });
+
+  const { isValid: localStoragePhoneIsValid } = useInput(() => {
+    const inputValidPhone = {
+      value: dataFromLocalStorage.phoneNumber,
+      maxLength: 15,
+      whiteSpace: true,
+      allowNumber: true,
+      allowStrings: false,
+    };
+
+    return validateInput(inputValidPhone);
+  });
+
+  //2 take the values from localStorage and do the validation with these values, when the pages load!
+
+  useEffect(() => {
+    const validateInputs = (prevValue) => {
+      return {
+        ...prevValue,
+        fullNameValidate: localStorageFullNameIsValid,
+        phoneValidate: localStoragePhoneIsValid,
+      };
+    };
+
+    setValidation(validateInputs);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   //FUll NAME
   const borderColorFullName = fullNameHasError ? `rgb(245, 2, 2)` : `#d5d9dc`;

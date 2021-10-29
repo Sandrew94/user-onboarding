@@ -26,9 +26,7 @@ const initialState = new Array(clientHouse.length).fill(false);
 
 export default function InvestmentPreferences({ setButtonDisabled }) {
   const [checkedState, setCheckedState] = useState(() => {
-    return (
-      JSON.parse(localStorage.getItem("checkbox", initialState)) || initialState
-    );
+    return JSON.parse(localStorage.getItem("checkbox")) || initialState;
   });
 
   const handleOnChange = (position) => {

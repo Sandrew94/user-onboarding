@@ -23,6 +23,8 @@ export default function InvestmentPlans({ setForm, setButtonDisabled }) {
     buttonState: false,
   });
 
+  console.log(validation);
+
   const [dataInput, setDataInput] = useState({
     fromInput: 0,
     toInput: 0,
@@ -68,13 +70,11 @@ export default function InvestmentPlans({ setForm, setButtonDisabled }) {
         <MoneyInputWrapper>
           <FromInput
             setValidation={setValidation}
-            validation={validation}
             setDataInput={setDataInput}
             dataInput={dataInput}
           />
           <ToInput
             setValidation={setValidation}
-            validation={validation}
             setDataInput={setDataInput}
             dataInput={dataInput}
           />
@@ -85,7 +85,7 @@ export default function InvestmentPlans({ setForm, setButtonDisabled }) {
 
       <FooterWrapper>
         <InvestitorTitle>Are you an accredited investor?</InvestitorTitle>
-        <ButtonRadio setValidation={setValidation} validation={validation} />
+        <ButtonRadio setValidation={setValidation} />
       </FooterWrapper>
     </Wrapper>
   );

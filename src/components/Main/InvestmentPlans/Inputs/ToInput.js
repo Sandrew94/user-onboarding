@@ -4,12 +4,7 @@ import validateInput from "../../../../utils/validateInput";
 
 import { LabelWrapper, SpanText, InputStyle } from "../InvestmentPlans.style";
 
-export default function ToInput({
-  setValidation,
-  validation,
-  dataInput,
-  setDataInput,
-}) {
+export default function ToInput({ setValidation, dataInput, setDataInput }) {
   //To-Input
   const {
     value: ToInputEntered,
@@ -33,21 +28,68 @@ export default function ToInput({
   });
 
   useEffect(() => {
-    let validate = {
-      ...validation,
-      ToInputIsValid: ToInputIsValid,
+    const validate = (prevValue) => {
+      return { ...prevValue, ToInputIsValid: ToInputIsValid };
     };
 
     setValidation(validate);
 
-    let passData = {
-      ...dataInput,
-      toInput: ToInputEntered,
+    const passData = (prevDataInput) => {
+      return {
+        ...prevDataInput,
+        toInput: ToInputEntered,
+      };
     };
 
     setDataInput(passData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setValidation, ToInputIsValid, setDataInput, ToInputEntered]);
+
+  ////////////////////////////////////////////////////////////////////////////////
+
+  //Take data from localStorage
+
+  const dataFromLocalStorage = {
+    To: JSON.parse(localStorage.getItem("To")) || "",
+  };
+
+  const { isValid: localStorageToIsValid } = useInput(() => {
+    const inputValidNumber = {
+      value: dataFromLocalStorage.To,
+      maxLength: 15,
+      whiteSpace: true,
+      allowNumber: true,
+      allowStrings: false,
+    };
+
+    return validateInput(inputValidNumber);
+  });
+
+  //2 Validate data from localStorage when page reload
+
+  useEffect(() => {
+    const validate = (prevValue) => {
+      return {
+        ...prevValue,
+        ToInputIsValid: localStorageToIsValid,
+      };
+    };
+
+    setValidation(validate);
+
+    /////////////////////////////////
+
+    const passData = (prevDataInput) => {
+      return {
+        ...prevDataInput,
+        toInput: dataFromLocalStorage.To,
+      };
+    };
+
+    setDataInput(passData);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   //Click color
   const toInputSpan = ToInputClick ? "#35A0EE" : "#a4aeb4";

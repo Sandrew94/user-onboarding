@@ -49,8 +49,8 @@ export default function ContactFormInput({ setButtonDisabled, setForm }) {
   return (
     <>
       <FullNamePhoneInput setValidation={setValidation} />
-      <EmailInput setValidation={setValidation} prevValid={validation} />
-      <CountryInput setValidation={setValidation} prevValid={validation} />
+      <EmailInput setValidation={setValidation} />
+      <CountryInput setValidation={setValidation} />
     </>
   );
 }

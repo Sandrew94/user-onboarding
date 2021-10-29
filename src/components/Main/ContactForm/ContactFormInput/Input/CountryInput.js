@@ -7,9 +7,7 @@ import {
   EmailCountrySpanDescription,
 } from "../ContactFormInput.style";
 
-export default function CountryInput({ setValidation, prevValid }) {
-  //COUNTRY INPUT
-
+export default function CountryInput({ setValidation }) {
   const {
     valueCountry: storeCountryData,
     isValid: enteredCountryIsValid,
@@ -30,15 +28,52 @@ export default function CountryInput({ setValidation, prevValid }) {
     return validateInput(inputValidCountry);
   });
 
+  //1 Validate input's from user Input
   useEffect(() => {
-    let validateInputs = {
-      ...prevValid,
-      countryValidate: enteredCountryIsValid,
+    let validateInputs = (prevValue) => {
+      return {
+        ...prevValue,
+        countryValidate: enteredCountryIsValid,
+      };
     };
 
     setValidation(validateInputs);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setValidation, enteredCountryIsValid]);
+
+  ////////////////////////////////////////////////////////////////////////////////
+
+  //Take data from localStorage
+
+  const dataFromLocalStorage = {
+    country: JSON.parse(localStorage.getItem("country")) || "",
+  };
+
+  const { isValid: localStorageCountryIsValid } = useInput(() => {
+    const inputValidCountry = {
+      value: dataFromLocalStorage.country,
+      maxLength: 14,
+      whiteSpace: true,
+      allowNumber: false,
+      allowStrings: true,
+    };
+
+    return validateInput(inputValidCountry);
+  });
+
+  //2 Validate data from LocalStorage
+
+  useEffect(() => {
+    let validateInputs = (prevValue) => {
+      return {
+        ...prevValue,
+        countryValidate: localStorageCountryIsValid,
+      };
+    };
+
+    setValidation(validateInputs);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   //COUNTRY
   const borderColorCountry = countryHasError ? `rgb(245, 2, 2)` : `#d5d9dc`;

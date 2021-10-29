@@ -7,7 +7,7 @@ import {
   EmailCountrySpanDescription,
 } from "../ContactFormInput.style";
 
-export default function EmailInput({ setValidation, prevValid }) {
+export default function EmailInput({ setValidation }) {
   //EMAIL INPUT
 
   const {
@@ -31,15 +31,55 @@ export default function EmailInput({ setValidation, prevValid }) {
     return validateInput(inputValidEmail);
   });
 
+  // 1- Validation when the user Input some value in the email field
+
   useEffect(() => {
-    let validateInputs = {
-      ...prevValid,
-      emailValidate: enteredEmailIsValid,
+    let validateInputs = (prevValue) => {
+      return {
+        ...prevValue,
+        emailValidate: enteredEmailIsValid,
+      };
     };
 
     setValidation(validateInputs);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enteredEmailIsValid, setValidation]);
+
+  ////////////////////////////////////////////////////////////////////////////////
+
+  //Take data from localStorage
+
+  const dataFromLocalStorage = {
+    email: JSON.parse(localStorage.getItem("email")) || "",
+  };
+
+  const { isValid: localStorageEmailIsValid } = useInput(() => {
+    const inputValidEmail = {
+      value: dataFromLocalStorage.email,
+      maxLength: 254,
+      whiteSpace: true,
+      allowNumber: false,
+      allowStrings: true,
+      allowEmail: true,
+    };
+
+    return validateInput(inputValidEmail);
+  });
+
+  //2 Validate data from localStorage
+
+  useEffect(() => {
+    let validateInputs = (prevValue) => {
+      return {
+        ...prevValue,
+        emailValidate: localStorageEmailIsValid,
+      };
+    };
+
+    setValidation(validateInputs);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   //EMAIL
   const borderColorEmail = emailHasError ? `rgb(245, 2, 2)` : `#d5d9dc`;
