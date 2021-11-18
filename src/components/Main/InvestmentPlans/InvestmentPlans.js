@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ButtonRadio from "./ButtonsRadio/ButtonRadio";
 import FromInput from "./Inputs/FromInput";
 import ToInput from "./Inputs/ToInput";
 import ProgressBar from "./ProgressBar/ProgressBar";
-
+import { ContextAuth } from "../../../store/context-auth";
 import {
   Wrapper,
   TitleWrapper,
@@ -16,41 +16,18 @@ import {
   InvestitorTitle,
 } from "./InvestmentPlans.style";
 
-export default function InvestmentPlans({ setForm, setButtonDisabled }) {
-  const [validation, setValidation] = useState({
-    ToInputIsValid: false,
-    FromInputIsValid: false,
-    buttonState: false,
-  });
-
-  console.log(validation);
+export default function InvestmentPlans() {
+  //Context Authentication
+  const { setButtonDisabled, setForm, formSubmitHandler, formIsValid } =
+    useContext(ContextAuth);
 
   const [dataInput, setDataInput] = useState({
     fromInput: 0,
     toInput: 0,
   });
 
-  //form validation
-  let formIsValid = false;
-  if (
-    validation.ToInputIsValid &&
-    validation.FromInputIsValid &&
-    validation.buttonState
-  ) {
-    formIsValid = true;
-  }
-
-  //form handler
-
-  const formSubmitHandler = useCallback(() => {
-    console.log("form");
-    if (!validation.ToInputIsValid && !validation.FromInputIsValid) {
-      return;
-    }
-  }, [validation.ToInputIsValid, validation.FromInputIsValid]);
-
   useEffect(() => {
-    setForm(() => formSubmitHandler);
+    setForm(formSubmitHandler);
     setButtonDisabled(formIsValid);
   }, [setButtonDisabled, formIsValid, setForm, formSubmitHandler]);
 
@@ -68,16 +45,8 @@ export default function InvestmentPlans({ setForm, setButtonDisabled }) {
           How much are you planning to invest in this year?
         </TitleMedium>
         <MoneyInputWrapper>
-          <FromInput
-            setValidation={setValidation}
-            setDataInput={setDataInput}
-            dataInput={dataInput}
-          />
-          <ToInput
-            setValidation={setValidation}
-            setDataInput={setDataInput}
-            dataInput={dataInput}
-          />
+          <FromInput setDataInput={setDataInput} />
+          <ToInput setDataInput={setDataInput} />
         </MoneyInputWrapper>
 
         <ProgressBar dataInput={dataInput} />
@@ -85,7 +54,7 @@ export default function InvestmentPlans({ setForm, setButtonDisabled }) {
 
       <FooterWrapper>
         <InvestitorTitle>Are you an accredited investor?</InvestitorTitle>
-        <ButtonRadio setValidation={setValidation} />
+        <ButtonRadio />
       </FooterWrapper>
     </Wrapper>
   );

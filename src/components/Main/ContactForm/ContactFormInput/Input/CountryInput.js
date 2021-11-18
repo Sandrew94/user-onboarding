@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import useInput from "../../../../../hooks/use-input";
 import validateInput from "../../../../../utils/validateInput";
 import {
@@ -6,8 +6,9 @@ import {
   InputSelect,
   EmailCountrySpanDescription,
 } from "../ContactFormInput.style";
+import { ContextAuth } from "../../../../../store/context-auth";
 
-export default function CountryInput({ setValidation }) {
+export default function CountryInput() {
   const {
     valueCountry: storeCountryData,
     isValid: enteredCountryIsValid,
@@ -27,6 +28,8 @@ export default function CountryInput({ setValidation }) {
 
     return validateInput(inputValidCountry);
   });
+
+  const { setValidation } = useContext(ContextAuth);
 
   //1 Validate input's from user Input
   useEffect(() => {

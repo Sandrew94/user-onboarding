@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import useInput from "../../../../hooks/use-input";
 import validateInput from "../../../../utils/validateInput";
 
 import { LabelWrapper, SpanText, InputStyle } from "../InvestmentPlans.style";
+import { ContextAuth } from "../../../../store/context-auth";
 
-export default function ToInput({ setValidation, dataInput, setDataInput }) {
+export default function ToInput({ setDataInput }) {
   //To-Input
   const {
     value: ToInputEntered,
@@ -26,6 +27,12 @@ export default function ToInput({ setValidation, dataInput, setDataInput }) {
 
     return validateInput(inputValidNumber);
   });
+
+  ///Context Auth
+
+  const { setValidation } = useContext(ContextAuth);
+
+  /////////////////////////////////
 
   useEffect(() => {
     const validate = (prevValue) => {

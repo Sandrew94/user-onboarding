@@ -1,56 +1,24 @@
-import React, { useEffect, useCallback, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import FullNamePhoneInput from "./Input/FullNamePhoneInput";
 import EmailInput from "./Input/EmailInput";
 import CountryInput from "./Input/CountryInput";
+import { ContextAuth } from "../../../../store/context-auth";
 
-export default function ContactFormInput({ setButtonDisabled, setForm }) {
-  const [validation, setValidation] = useState({
-    fullNameValidate: false,
-    phoneValidate: false,
-    emailValidate: false,
-    countryValidate: false,
-  });
-
-  //form validation
-  let formIsValid = false;
-  if (
-    validation.fullNameValidate &&
-    validation.phoneValidate &&
-    validation.emailValidate &&
-    validation.countryValidate
-  ) {
-    formIsValid = true;
-  }
-
-  //form handler
-
-  const formSubmitHandler = useCallback(() => {
-    console.log("form");
-    if (
-      !validation.fullNameValidate ||
-      !validation.phoneValidate ||
-      !validation.emailValidate ||
-      !validation.countryValidate
-    ) {
-      return;
-    }
-  }, [
-    validation.fullNameValidate,
-    validation.phoneValidate,
-    validation.emailValidate,
-    validation.countryValidate,
-  ]);
+export default function ContactFormInput() {
+  //Context Auth
+  const { setButtonDisabled, setForm, formSubmitHandler, formIsValid } =
+    useContext(ContextAuth);
 
   useEffect(() => {
-    setForm(() => formSubmitHandler);
+    setForm(formSubmitHandler);
     setButtonDisabled(formIsValid);
   }, [setButtonDisabled, formIsValid, setForm, formSubmitHandler]);
 
   return (
     <>
-      <FullNamePhoneInput setValidation={setValidation} />
-      <EmailInput setValidation={setValidation} />
-      <CountryInput setValidation={setValidation} />
+      <FullNamePhoneInput />
+      <EmailInput />
+      <CountryInput />
     </>
   );
 }

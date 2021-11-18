@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Wrapper,
   WrapperTitle,
@@ -10,6 +10,7 @@ import {
 } from "./InvestmentPreferences.style";
 import InputCheckbox from "./InputCheckbox/InputCheckbox";
 import { v4 as uuidv4 } from "uuid";
+import { ContextAuth } from "../../../store/context-auth";
 
 const clientHouse = [
   "Single family",
@@ -24,10 +25,16 @@ const clientHouse = [
 
 const initialState = new Array(clientHouse.length).fill(false);
 
-export default function InvestmentPreferences({ setButtonDisabled }) {
+export default function InvestmentPreferences() {
   const [checkedState, setCheckedState] = useState(() => {
     return JSON.parse(localStorage.getItem("checkbox")) || initialState;
   });
+
+  ///COntext
+
+  const { setButtonDisabled } = useContext(ContextAuth);
+
+  /////////
 
   const handleOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>

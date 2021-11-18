@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import useInput from "../../../../../hooks/use-input";
 import validateInput from "../../../../../utils/validateInput";
 import {
@@ -7,8 +7,9 @@ import {
   SpanInputDescription,
   InputStyle,
 } from "../ContactFormInput.style";
+import { ContextAuth } from "../../../../../store/context-auth";
 
-export default function FullNamePhoneInput({ setValidation }) {
+export default function FullNamePhoneInput() {
   //FullName Input
   const {
     isValid: enteredFullNameIsValid,
@@ -47,6 +48,10 @@ export default function FullNamePhoneInput({ setValidation }) {
 
     return validateInput(inputValidPhone);
   });
+
+  //Context Auth
+
+  const { setValidation } = useContext(ContextAuth);
 
   //Two use effect
   //1 Load validation when user Input some values in the field

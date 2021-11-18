@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../../Button/Button";
 import {
@@ -9,9 +9,11 @@ import {
   backgroundColorDisabledStyle,
   EmptyDivDivider,
 } from "./ButtonToPage.style";
+import { ContextAuth } from "../../../store/context-auth";
 
-export default function ButtonsToPage(props) {
-  const { buttonDisabled, form } = props;
+export default function ButtonsToPage() {
+  //Context
+  const { buttonDisabled, setButtonDisabled, form } = useContext(ContextAuth);
 
   const location = useLocation();
 
@@ -52,7 +54,10 @@ export default function ButtonsToPage(props) {
           </Button>
         </Link>
 
-        <Link to={`/pages${dinamicPath(location.pathname)}`} onClick={form}>
+        <Link
+          to={`/pages${dinamicPath(location.pathname)}`}
+          onClick={() => form}
+        >
           <Button
             disabled={buttonDisabled ? false : true}
             type="submit"
@@ -61,6 +66,7 @@ export default function ButtonsToPage(props) {
             }
             nextStep={nextStepStyle}
             onClick={() => {
+              setButtonDisabled(false);
               return dinamicNextPageText === "Finish" ? alert("Finish") : "";
             }}
           >

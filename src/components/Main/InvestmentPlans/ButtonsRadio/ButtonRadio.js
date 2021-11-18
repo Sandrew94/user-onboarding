@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   ButtonWrapper,
   ButtonLabel,
   SpanCheckmark,
   InputRadio,
 } from "../InvestmentPlans.style";
+import { ContextAuth } from "../../../../store/context-auth";
 
-export default function ButtonRadio({ setValidation }) {
+export default function ButtonRadio() {
   const [activeIndex, setActiveIndex] = useState(
     JSON.parse(localStorage.getItem("radio")) || 0
   );
   const [buttonState, setButtonState] = useState(
     JSON.parse(localStorage.getItem("checkboxAccreditInvest")) || false
   );
+
+  //Context auth
+
+  const { setValidation } = useContext(ContextAuth);
+
+  ////////////////////////////////
 
   const handleOnClick = (event, index) => {
     setActiveIndex(index);

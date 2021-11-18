@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import useInput from "../../../../../hooks/use-input";
 import validateInput from "../../../../../utils/validateInput";
 import {
@@ -6,8 +6,9 @@ import {
   InputStyle,
   EmailCountrySpanDescription,
 } from "../ContactFormInput.style";
+import { ContextAuth } from "../../../../../store/context-auth";
 
-export default function EmailInput({ setValidation }) {
+export default function EmailInput() {
   //EMAIL INPUT
 
   const {
@@ -30,6 +31,10 @@ export default function EmailInput({ setValidation }) {
 
     return validateInput(inputValidEmail);
   });
+
+  //COntext Auth
+
+  const { setValidation } = useContext(ContextAuth);
 
   // 1- Validation when the user Input some value in the email field
 

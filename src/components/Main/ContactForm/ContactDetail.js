@@ -9,7 +9,7 @@ import {
   TitlePrivacy,
 } from "./ContactDetail.style";
 
-export default function ContactDetail({ setButtonDisabled, setForm }) {
+export default function ContactDetail() {
   return (
     <Wrapper>
       <ContainerTitleText>
@@ -19,10 +19,7 @@ export default function ContactDetail({ setButtonDisabled, setForm }) {
           started by letting us know a little bit about you
         </Description>
       </ContainerTitleText>
-      <ContactFormInput
-        setButtonDisabled={setButtonDisabled}
-        setForm={setForm}
-      />
+      <ContactFormInput />
 
       <ContainerTitleText>
         <TitlePrivacy>Privacy Policy</TitlePrivacy>
