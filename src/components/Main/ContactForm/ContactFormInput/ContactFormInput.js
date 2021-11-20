@@ -6,8 +6,18 @@ import { ContextAuth } from "../../../../store/context-auth";
 
 export default function ContactFormInput() {
   //Context Auth
-  const { setButtonDisabled, setForm, formSubmitHandler, formIsValid } =
+  const { setButtonDisabled, setForm, formSubmitHandler, validation } =
     useContext(ContextAuth);
+
+  let formIsValid = false;
+  if (
+    validation.fullNameValidate &&
+    validation.phoneValidate &&
+    validation.emailValidate &&
+    validation.countryValidate
+  ) {
+    formIsValid = true; // i use this for the button state, disabled or not
+  }
 
   useEffect(() => {
     setForm(formSubmitHandler);

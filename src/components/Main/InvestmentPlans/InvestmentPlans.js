@@ -18,13 +18,22 @@ import {
 
 export default function InvestmentPlans() {
   //Context Authentication
-  const { setButtonDisabled, setForm, formSubmitHandler, formIsValid } =
+  const { setButtonDisabled, setForm, formSubmitHandler, validation } =
     useContext(ContextAuth);
 
   const [dataInput, setDataInput] = useState({
     fromInput: 0,
     toInput: 0,
   });
+
+  let formIsValid = false;
+  if (
+    validation.ToInputIsValid &&
+    validation.FromInputIsValid &&
+    validation.buttonState
+  ) {
+    formIsValid = true;
+  }
 
   useEffect(() => {
     setForm(formSubmitHandler);
