@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import up from "../../../../assets/images/UP.svg";
 import {
@@ -13,25 +13,42 @@ import {
   FooterLogoContainer,
   FooterLogo,
 } from "./InvestitorQuotes.style.js";
+import { LoadingWrapper, LsdRingDiv } from "../../../Loading/Loading.style";
 const axios = require("axios");
 
 export default function InfoInvestiments() {
   const location = useLocation();
   const [quotes, setQuotes] = useState([
     { titleQuote: "", roleQuote: "", investitorquotes: "" },
+    { titleQuote: "", roleQuote: "", investitorquotes: "" },
+    { titleQuote: "", roleQuote: "", investitorquotes: "" },
   ]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  //////
+
+  const getQuoteData = useCallback(async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios.get(`http://localhost:1337/quote-texts`);
+
+      setQuotes(data);
+    } catch (error) {
+      setError(error);
+    }
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
-    const getQuoteData = async () => {
-      const { data } = await axios.get(`http://localhost:1337/quote-texts`);
-      console.log(data);
-      setQuotes(data);
+    const timer = setTimeout(() => {
+      getQuoteData();
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [getQuoteData]);
 
-      //add error handling and loading handling
-    };
-
-    getQuoteData();
-  }, []);
+  ////////////////////////////////
+  //Data manipulation
 
   let titleQuoteMod = "";
   let roleQuoteMod = "";
@@ -62,16 +79,30 @@ export default function InfoInvestiments() {
     <Wrapper>
       <Backtips></Backtips>
       <VectorLeft></VectorLeft>
-      <LongText>{investitorquotesMod}</LongText>
-      <ContainerFooter>
-        <ContainerQuotesCreator>
-          <QuoteCreator>{titleQuoteMod}</QuoteCreator>
-          <QuoteCreatorRole>{roleQuoteMod}</QuoteCreatorRole>
-        </ContainerQuotesCreator>
-        <FooterLogoContainer>
-          <FooterLogo src={up} alt="up-Logo" />
-        </FooterLogoContainer>
-      </ContainerFooter>
+      {loading && (
+        <LoadingWrapper>
+          <LsdRingDiv></LsdRingDiv>
+        </LoadingWrapper>
+      )}
+      {!loading && (
+        <>
+          <LongText>{investitorquotesMod}</LongText>
+          <ContainerFooter>
+            <ContainerQuotesCreator>
+              <QuoteCreator>{titleQuoteMod}</QuoteCreator>
+              <QuoteCreatorRole>{roleQuoteMod}</QuoteCreatorRole>
+            </ContainerQuotesCreator>
+            <FooterLogoContainer>
+              <FooterLogo src={up} alt="up-Logo" />
+            </FooterLogoContainer>
+          </ContainerFooter>{" "}
+        </>
+      )}
+      {error && (
+        <div>
+          Something went wrong: {error.message} - PLEASE RELOAD THE PAGE
+        </div>
+      )}
     </Wrapper>
   );
 }
