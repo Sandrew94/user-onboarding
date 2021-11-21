@@ -13,7 +13,13 @@ import { ContextAuth } from "../../../store/context-auth";
 
 export default function ButtonsToPage() {
   //Context
-  const { buttonDisabled, setButtonDisabled, form } = useContext(ContextAuth);
+  const {
+    buttonDisabled,
+    setButtonDisabled,
+    formSubmitHandler,
+    error,
+    loading,
+  } = useContext(ContextAuth);
 
   const location = useLocation();
 
@@ -36,6 +42,8 @@ export default function ButtonsToPage() {
   const dinamicNextPageText =
     location.pathname === "/pages3" ? "Finish" : "Next step ➝";
 
+  ////////////////////////////////////////////////////////////////
+
   return (
     <Wrapper>
       <Link to={`${dinamicPreviousStep(location.pathname)}`}>
@@ -56,7 +64,12 @@ export default function ButtonsToPage() {
 
         <Link
           to={`/pages${dinamicPath(location.pathname)}`}
-          onClick={() => form}
+          onClick={() => {
+            if (location.pathname === "/pages3") {
+              formSubmitHandler();
+            }
+            return;
+          }}
         >
           <Button
             disabled={buttonDisabled ? false : true}

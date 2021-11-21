@@ -18,7 +18,7 @@ import {
 
 export default function InvestmentPlans() {
   //Context Authentication
-  const { setButtonDisabled, setForm, formSubmitHandler, validation } =
+  const { setButtonDisabled, validation, setInputValue } =
     useContext(ContextAuth);
 
   const [dataInput, setDataInput] = useState({
@@ -36,9 +36,8 @@ export default function InvestmentPlans() {
   }
 
   useEffect(() => {
-    setForm(formSubmitHandler);
     setButtonDisabled(formIsValid);
-  }, [setButtonDisabled, formIsValid, setForm, formSubmitHandler]);
+  }, [setButtonDisabled, formIsValid, setInputValue]);
 
   return (
     <Wrapper>

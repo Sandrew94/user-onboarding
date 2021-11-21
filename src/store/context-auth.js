@@ -1,18 +1,22 @@
 import React, { useState, useCallback } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+// const axios = require("axios");
 
 export const ContextAuth = React.createContext({
-  form: () => {},
-  setForm: () => {},
   buttonDisabled: false,
   setButtonDisabled: () => {},
   setValidation: () => {},
   vadalidation: {},
   formSubmitHandler: () => {},
   formIsValid: false,
+  setResetInputValue: () => {},
 });
 
 export default function ContextAuthProvider({ children }) {
-  const [form, setForm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  ////////////////////////////////
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   ////////////////////////////////
@@ -27,8 +31,18 @@ export default function ContextAuthProvider({ children }) {
   });
 
   ////////////////////////////////
+  const [inputValue, setInputValue] = useState({
+    fullname: "",
+    phonenumber: "",
+    email: "",
+    country: "",
+    investFrom: "",
+    investTo: "",
+  });
 
-  const formSubmitHandler = useCallback(() => {
+  ////////////////////////////////
+
+  const formSubmitHandler = useCallback(async () => {
     if (
       !validation.fullNameValidate ||
       !validation.phoneValidate ||
@@ -43,19 +57,32 @@ export default function ContextAuthProvider({ children }) {
     }
 
     console.log("form");
-    //axios submit POST request //Future //Need to install it
-  }, [validation]);
 
-  //////
+    //axios submit POST request //Future
+    try {
+      setLoading(true);
+      const { data } = await axios.post(
+        "https://user-onboarding-backend.herokuapp.com/info-users",
+        inputValue
+      );
+
+      console.log(data);
+    } catch (e) {
+      setError(e);
+    }
+
+    setLoading(false);
+  }, [validation, inputValue]);
 
   const contextValue = {
-    form,
-    setForm,
     buttonDisabled,
     setButtonDisabled,
     setValidation,
     validation,
     formSubmitHandler,
+    setInputValue,
+    error, // to put on button to pages
+    loading, // to put on button to pages
   };
 
   return (

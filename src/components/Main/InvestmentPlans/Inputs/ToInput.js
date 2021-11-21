@@ -30,7 +30,7 @@ export default function ToInput({ setDataInput }) {
 
   ///Context Auth
 
-  const { setValidation } = useContext(ContextAuth);
+  const { setValidation, setInputValue } = useContext(ContextAuth);
 
   /////////////////////////////////
 
@@ -49,6 +49,17 @@ export default function ToInput({ setDataInput }) {
     };
 
     setDataInput(passData);
+
+    ////
+
+    const valueToSubmit = (prevValue) => {
+      return {
+        ...prevValue,
+        investTo: dataFromLocalStorage.To,
+      };
+    };
+
+    setInputValue(valueToSubmit);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setValidation, ToInputIsValid, setDataInput, ToInputEntered]);
 

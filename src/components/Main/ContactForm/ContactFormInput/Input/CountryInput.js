@@ -29,7 +29,7 @@ export default function CountryInput() {
     return validateInput(inputValidCountry);
   });
 
-  const { setValidation } = useContext(ContextAuth);
+  const { setValidation, setInputValue } = useContext(ContextAuth);
 
   //1 Validate input's from user Input
   useEffect(() => {
@@ -41,6 +41,17 @@ export default function CountryInput() {
     };
 
     setValidation(validateInputs);
+
+    // Value to submit at the server
+
+    const valueToSubmit = (prevValue) => {
+      return {
+        ...prevValue,
+        country: storeCountryData,
+      };
+    };
+
+    setInputValue(valueToSubmit);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setValidation, enteredCountryIsValid]);
 

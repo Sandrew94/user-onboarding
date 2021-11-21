@@ -51,7 +51,7 @@ export default function FullNamePhoneInput() {
 
   //Context Auth
 
-  const { setValidation } = useContext(ContextAuth);
+  const { setValidation, setInputValue } = useContext(ContextAuth);
 
   //Two use effect
   //1 Load validation when user Input some values in the field
@@ -66,12 +66,25 @@ export default function FullNamePhoneInput() {
     };
 
     setValidation(validateInputs);
+
+    // Value to submit at the server
+
+    const valueToSubmit = (prevValue) => {
+      return {
+        ...prevValue,
+        fullname: fullNameSaveValue,
+        phonenumber: phoneSaveValue,
+      };
+    };
+
+    setInputValue(valueToSubmit);
   }, [
     enteredFullNameIsValid,
     enteredPhoneIsValid,
     setValidation,
     fullNameSaveValue,
     phoneSaveValue,
+    setInputValue,
   ]);
 
   ////// Load data from localStorage
@@ -101,7 +114,7 @@ export default function FullNamePhoneInput() {
       allowStrings: false,
     };
 
-    return validateInput(inputValidPhone);
+    return validateInput(inputValidPhone, phoneSaveValue);
   });
 
   //2 take the values from localStorage and do the validation with these values, when the pages load!

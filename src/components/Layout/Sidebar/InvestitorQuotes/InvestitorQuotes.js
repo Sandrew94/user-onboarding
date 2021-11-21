@@ -31,7 +31,9 @@ export default function InfoInvestiments() {
   const getQuoteData = useCallback(async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get(`http://localhost:1337/quote-texts`);
+      const { data } = await axios.get(
+        `https://user-onboarding-backend.herokuapp.com/quote-texts`
+      );
 
       setQuotes(data);
     } catch (error) {

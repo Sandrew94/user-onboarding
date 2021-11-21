@@ -34,7 +34,7 @@ export default function EmailInput() {
 
   //COntext Auth
 
-  const { setValidation } = useContext(ContextAuth);
+  const { setValidation, setInputValue } = useContext(ContextAuth);
 
   // 1- Validation when the user Input some value in the email field
 
@@ -47,6 +47,17 @@ export default function EmailInput() {
     };
 
     setValidation(validateInputs);
+
+    // Value to submit at the server
+
+    const valueToSubmit = (prevValue) => {
+      return {
+        ...prevValue,
+        email: storeEmailData,
+      };
+    };
+
+    setInputValue(valueToSubmit);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enteredEmailIsValid, setValidation]);
 

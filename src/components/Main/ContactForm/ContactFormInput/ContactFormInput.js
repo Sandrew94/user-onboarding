@@ -6,8 +6,7 @@ import { ContextAuth } from "../../../../store/context-auth";
 
 export default function ContactFormInput() {
   //Context Auth
-  const { setButtonDisabled, setForm, formSubmitHandler, validation } =
-    useContext(ContextAuth);
+  const { setButtonDisabled, validation } = useContext(ContextAuth);
 
   let formIsValid = false;
   if (
@@ -20,9 +19,8 @@ export default function ContactFormInput() {
   }
 
   useEffect(() => {
-    setForm(formSubmitHandler);
     setButtonDisabled(formIsValid);
-  }, [setButtonDisabled, formIsValid, setForm, formSubmitHandler]);
+  }, [setButtonDisabled, formIsValid]);
 
   return (
     <>
