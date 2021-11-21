@@ -17,8 +17,8 @@ export default function ButtonsToPage() {
     buttonDisabled,
     setButtonDisabled,
     formSubmitHandler,
-    error,
-    loading,
+    // error,
+    // loading,
   } = useContext(ContextAuth);
 
   const location = useLocation();

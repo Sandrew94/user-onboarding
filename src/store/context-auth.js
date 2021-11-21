@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { useLocation } from "react-router-dom";
 import axios from "axios";
-// const axios = require("axios");
 
 export const ContextAuth = React.createContext({
   buttonDisabled: false,
