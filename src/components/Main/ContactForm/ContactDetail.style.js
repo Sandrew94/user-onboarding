@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
     height: 90%;
     padding: 3rem;
   }
+  @media only screen and (max-width: 1000px) {
+    height: 90%;
+    padding: 0rem;
+  }
 `;
 
 export const ContainerTitleText = styled.div`

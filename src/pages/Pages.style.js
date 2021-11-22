@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  min-height: 90vh;
+  min-height: 100vh;
   width: 100%;
   padding: 1.5rem;
   @media only screen and (max-width: 1440px) {
@@ -20,6 +20,9 @@ export const ContainerRight = styled.div`
   @media only screen and (max-width: 1440px) {
     width: 70%;
   }
+  @media only screen and (max-width: 1100px) {
+    width: 75%;
+  }
 `;
 
 export const ContainerLeft = styled.div`
@@ -31,6 +34,9 @@ export const ContainerLeft = styled.div`
   flex-direction: column;
   justify-content: space-between;
   @media only screen and (max-width: 1440px) {
-    width: 30%;
+    width: 35%;
+  }
+  @media only screen and (max-width: 1000px) {
+    width: 40%;
   }
 `;

@@ -9,8 +9,10 @@ export const Wrapper = styled.div`
   border-radius: 4px;
   width: 75%;
   height: auto;
-  margin-bottom: 5rem;
-  margin-left: 6.5rem;
+  /* margin-bottom: 5rem;
+  margin-left: 6.5rem; */
+  margin-bottom: 2.5rem;
+  margin-left: 4rem;
   padding: 3rem;
   display: flex;
   flex-direction: column;

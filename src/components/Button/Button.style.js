@@ -15,4 +15,7 @@ export const BtnStyle = styled.button`
   ${(props) => props.skipForNow}
   ${(props) => props.nextStep}
   ${(props) => props.backgroundColorDisabled}
+  @media only screen and (max-width: 1000px) {
+    font-size: 1.4rem;
+  }
 `;

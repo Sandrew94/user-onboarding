@@ -4,6 +4,9 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 4rem 7rem 0 7rem;
+  @media only screen and (max-width: 1000px) {
+    padding: 1rem 3rem 0 3rem;
+  }
 `;
 
 export const TextStyle = styled.span`

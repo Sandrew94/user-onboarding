@@ -12,7 +12,9 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
   width: 56.2rem;
   margin-bottom: 4rem;
-  margin-right: 4rem;
+  margin-left: 4rem;
+  @media only screen and (max-width: 1000px) {
+  }
 `;
 
 export const TitleBig = styled.span`
@@ -40,7 +42,10 @@ export const TitlePlanninng = styled.div`
   flex-direction: column;
   justify-self: flex-start;
   margin-bottom: 4rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
+  @media only screen and (max-width: 1000px) {
+    margin-right: 3rem;
+  }
 `;
 
 export const TitleMedium = styled.span`

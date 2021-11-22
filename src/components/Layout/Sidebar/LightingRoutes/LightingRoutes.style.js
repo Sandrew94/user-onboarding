@@ -5,8 +5,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-left: 3rem;
+  margin-bottom: 4rem;
 
   @media only screen and (max-width: 1440px) {
     margin: auto 0.5rem;
@@ -31,17 +33,18 @@ export const FirstSquare = styled.span`
   z-index: 8;
   position: relative;
   background-color: ${(props) => props.backgroundColor};
+  margin-right: 1rem;
 `;
 
 export const SecondSquare = styled.span`
   z-index: 5;
-  top: 11%;
-  left: 10%;
+  top: 13%;
+  left: 13%;
   position: absolute;
   border-radius: 4px;
   padding: 0.6rem;
   background-color: rgba(255, 255, 255, 0.5);
-  border: 6px solid #35a0ee;
+  border: 8px solid #35a0ee;
   background-color: ${(props) => props.backgroundColor};
 `;
 
@@ -74,8 +77,7 @@ export const SecondRectangle = styled.span`
 
 export const WrapperText = styled.span`
   font-family: "Montserrat Alternates", sans-serif;
-  margin-left: 2rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   line-height: 2.4rem;
   letter-spacing: 0.2px;
   font-weight: 700;

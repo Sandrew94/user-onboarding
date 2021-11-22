@@ -16,12 +16,20 @@ export const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
   font-size: 62.5%; //1rem = 10px
-  @media only screen and (max-width: 1440px) {
+  @media only screen and (min-width: 1410px) {
+    font-size: 70%;
+  }  
+  @media only screen and (min-width: 1600px) {
+    font-size: 80%;
+  }  
+  
+    @media only screen and (max-width: 1440px) {
     font-size: 65%;
   }
-  @media only screen and (min-width: 1441px) {
-    font-size: 80%;
+  @media only screen and (max-width: 1000px) {
+    font-size: 58%
   }
+    
 }
 
 body {
