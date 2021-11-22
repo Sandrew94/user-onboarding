@@ -12,7 +12,7 @@ export const ContextAuth = React.createContext({
 });
 
 export default function ContextAuthProvider({ children }) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   ////////////////////////////////
   const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -40,6 +40,10 @@ export default function ContextAuthProvider({ children }) {
 
   ////////////////////////////////
 
+  // const reset = () => {
+  //   setInputValue("");
+  // };
+
   const formSubmitHandler = useCallback(async () => {
     if (
       !validation.fullNameValidate ||
@@ -65,8 +69,9 @@ export default function ContextAuthProvider({ children }) {
       );
 
       console.log(data);
+      localStorage.clear();
     } catch (e) {
-      setError(e);
+      setError(e.message);
     }
 
     setLoading(false);
@@ -79,8 +84,8 @@ export default function ContextAuthProvider({ children }) {
     validation,
     formSubmitHandler,
     setInputValue,
-    error, // to put on button to pages
-    loading, // to put on button to pages
+    error,
+    loading,
   };
 
   return (

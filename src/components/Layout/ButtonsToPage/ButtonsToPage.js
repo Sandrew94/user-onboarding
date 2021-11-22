@@ -13,13 +13,8 @@ import { ContextAuth } from "../../../store/context-auth";
 
 export default function ButtonsToPage() {
   //Context
-  const {
-    buttonDisabled,
-    setButtonDisabled,
-    formSubmitHandler,
-    // error,
-    // loading,
-  } = useContext(ContextAuth);
+  const { buttonDisabled, setButtonDisabled, formSubmitHandler } =
+    useContext(ContextAuth);
 
   const location = useLocation();
 
