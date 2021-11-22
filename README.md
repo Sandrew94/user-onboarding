@@ -42,8 +42,8 @@
 
 Backend:
 
-- Host on: [Heroku](https://dashboard.heroku.com/login)
-- Backend was build with: [Strapi](httpshttps://strapi.io/dashboard.heroku.com/login) and [Postgres](https://www.postgresql.org/)
+- Host on: [Heroku](https://dashboard.heroku.com/)
+- Backend was build with: [Strapi](https://strapi.io/) and [Postgres](https://www.postgresql.org/)
 
 ## Usage
 
