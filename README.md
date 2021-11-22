@@ -1,60 +1,66 @@
-# Create an onboarding process using the attached mockup file.
+<br />
+<p align="center">
 
-![preview](https://github.com/tomorrowdevs-projects/user-onboarding/blob/main/preview.png "preview")
+  <h1 align="center">#User OnBoarding</h1>
 
-## Download here the [Figma Mockup](https://github.com/tomorrowdevs-projects/user-onboarding/blob/main/User_onboarding.fig)
+<!-- TABLE OF CONTENTS -->
+<summary>
+<h2 style="display: inline-block">Table of Contents</h2></summary>
+<details open="open">  
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-## Requirementss:
+<!-- ABOUT THE PROJECT -->
 
-- Respect exactly the provided layout
-- Deploy the project towards Netlify (www.netlify.com) connected to your GitHub Repo
-- The form should be validated and should prompt success or error messages
-- Error messages should be provided on each field
+## About The Project
 
-## Level 1:
+- This project has been designed to works only with desktop or bit laptop
+- In this project i tried to simulate some financial registrator for banking account, with some validations for the input's
+- All input field will be uploaded in Strapi, you will see the result at the end of the projects
 
-- Start the project using ReactJs
-- Implement all the components and layouts
-- Provide a validation for each field
-- Use state to store temporary values and show the steps
-- Write tests for each single validation
+### Built With
 
-## Level 2:
+- [Javascript](https://www.javascript.com/)
+- [React](https://reactjs.org/) and [React-router-dom-v5](https://v5.reactrouter.com/web/guides/quick-start)
+- [Styled-components](https://styled-components.com/)
+- [Webpack](https://webpack.js.org/)
 
-- Use react-router to navigate between the steps
-- Find a strategy to save temporary values (eg. Context, Redux, LocalStorage)
+Backend:
 
-## Level 3:
+- Host on: [Heroku](https://dashboard.heroku.com/login)
+- Backend was build with: [Strapi](httpshttps://strapi.io/dashboard.heroku.com/login) and [Postgres](https://www.postgresql.org/)
 
-- Save results with Strapi (https://strapi.io)
-- Show a loader while calling the api and provide a feedback for success or error messages
+## Usage
 
-# Before starting any of the tasks in this Learning Path, please READ the following rules
+1. Open [User-OnBoarding](https://user-onboarding-td.netlify.app/)
+2. Add some input field's (fake work's too but they need to respect the validations)
+3. Continue until the end
+4. Submit to the Strapi backend
+5. You will see all the previous and your courrent account!
 
-## What do you need to start this Learning Path:
+<!-- CONTRIBUTING -->
 
-1. A GitHub account
-2. A Local IDE or Editor
-3. Git Environment
-4. A http://toggl.com/ account and Chrome Extension
-5. A Netlify account
+## Contributing
 
-## Rules that you MUST follow:
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-- **Fork this repo into your own Github Account** as a **public** Repository
-- **Create a Github Project** connected to the repository
-- Read **carefully** the task description
-- Analyze the task, and **create relative subtasks** to track any requirement and knowledge needed
-- **Assign an estimate to each created subtask**
-- Define a **deadline for the main task**
-- **Provide a Flowchart within the project**
-- Where required, involve other members of the community to support you on the development
-- When working on a task, move it to the **In progress** column and start tracking it
-- After each task completion, **move it to the "Done" column** and stop tracking it
-- After the main task completion, share the solution (e.g. your GitHub repo) over the community
+<!-- CONTACT -->
 
-## Following some useful materials for your work:
+## Contact
 
-[Git and GitHub configuration and usage](https://www.loom.com/share/6b86aa3bc0aa4f2d88a315bc9d3209c4)
-
-[Pseudo Code Methodology](https://wtmatter.com/pseudocode/)
+Sandrew94 - [@My_twitter](https://twitter.com/AndreaSanti15) - [Email](santi_andrea@hotmail.it)
